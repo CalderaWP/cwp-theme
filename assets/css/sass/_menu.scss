@@ -1,0 +1,35 @@
+
+//menu
+.blog-menu {
+  color: $cwp_green;
+  a {
+    color: $cwp_green;
+  }
+}
+
+.blog-menu a:hover,
+.blog-menu .current-menu-item a { color: $white }
+
+.blog-menu ul > .has-children::after,
+.blog-menu ul > .page_item_has_children::after {
+
+  border-left-color: rgba(255,255,255,0.4);
+
+}
+
+.blog-menu ul > .has-children:hover::after,
+.blog-menu ul > .page_item_has_children:hover::after { border-right-color: $black; }
+
+.blog-menu ul li {
+  background: $black;
+}
+
+.blog-menu ul a {
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.blog-menu ul > li:last-child a { border-bottom-width: 0; }
+
+.blog-menu li:hover > ul {
+
+}

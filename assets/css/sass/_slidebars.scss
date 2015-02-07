@@ -1,0 +1,31 @@
+.slide_bar {
+  .sidebar{
+    width: 100%;
+  }
+
+  .panel-heading {
+    background-color: $primaryShade2 !important;
+  }
+
+  .panel-body {
+    background-color: $primaryTint1 !important;
+  }
+
+  .caldera-grid .btn-default {
+    background-color: $secondary1Shade2 !important;
+    background-image: none;
+    color: white;
+    &:hover, &:active {
+      background-color: $secondary1Tint2 !important;
+      color: $secondary1Shade2;
+    }
+
+  }
+
+}
+
+
+
+
+
+
