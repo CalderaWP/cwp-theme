@@ -16,7 +16,7 @@
     margin: 0 1%; }
 
 .product-preview {
-  border: 1px solid #f9c7cc;
+  border: 1px solid #F9C7CC;
   height: 380px;
   overflow: hidden; }
   .product-preview img {
@@ -547,19 +547,19 @@
 .slide_bar .panel-heading {
   background-color: #597516 !important; }
 .slide_bar .panel-body {
-  background-color: #cde495 !important; }
+  background-color: #CDE495 !important; }
 .slide_bar .caldera-grid .btn-default {
   background-color: #781720 !important;
   background-image: none;
   color: white; }
   .slide_bar .caldera-grid .btn-default:hover, .slide_bar .caldera-grid .btn-default:active {
-    background-color: #f9c7cc !important;
+    background-color: #F9C7CC !important;
     color: #781720; }
 
 .blog-info .blog-title {
   display: inline-block;
   padding: 30px;
-  background: #a3be5f; }
+  background: #A3BE5F; }
   .blog-info .blog-title a {
     background-color: #597516;
     text-transform: uppercase;
@@ -568,15 +568,15 @@
     font-size: 1.75em;
     padding: 6px; }
     .blog-info .blog-title a:hover {
-      color: #a3be5f; }
+      color: #A3BE5F; }
 .blog-info .blog-description {
-  color: #e7f5c4; }
+  color: #E7F5C4; }
 
 .widget {
-  background-color: #cde495;
-  border: 1px solid #a3be5f;
+  background-color: #CDE495;
+  border: 1px solid #A3BE5F;
   padding: 5%;
-  background-color: #fcfdf7; }
+  background-color: #FCFDF7; }
 
 @media (min-width: 700px) {
   .widget {
@@ -667,7 +667,7 @@
 
 .widget:last-child {
   padding-bottom: 0px;
-  border-bottom: 1px solid #a3be5f; }
+  border-bottom: 1px solid #A3BE5F; }
 
 div#cwp-social-links ul li {
   display: inline;
@@ -699,20 +699,20 @@ ul#footer-menu li {
   margin-bottom: 18px; }
 
 .credits-inner.section-inner {
-  color: #fcfdf7; }
+  color: #FCFDF7; }
   .credits-inner.section-inner a {
-    color: #7e9a37; }
+    color: #7E9A37; }
     .credits-inner.section-inner a:hover {
-      color: #cde495; }
+      color: #CDE495; }
 
 .blog-menu {
-  color: #a3be5f; }
+  color: #A3BE5F; }
   .blog-menu a {
-    color: #a3be5f; }
+    color: #A3BE5F; }
 
 .blog-menu a:hover,
 .blog-menu .current-menu-item a {
-  color: #fcfdf7; }
+  color: #FCFDF7; }
 
 .blog-menu ul > .has-children::after,
 .blog-menu ul > .page_item_has_children::after {
@@ -737,25 +737,25 @@ ul#footer-menu li {
   padding: 0; }
 
 .front-page-feature {
-  background-color: #cde495;
-  border: 1px solid #a3be5f;
+  background-color: #CDE495;
+  border: 1px solid #A3BE5F;
   padding: 5%;
-  background-color: #fcfdf7;
+  background-color: #FCFDF7;
   margin-bottom: 24px;
   background-position-y: 0;
   background-repeat: no-repeat; }
   .front-page-feature a {
     color: #597516; }
   .front-page-feature .title-wrap {
-    background-color: #522b6e;
+    background-color: #829A4D;
     width: 100%;
     display: inline-block;
     padding: 12px; }
     .front-page-feature .title-wrap h3 a {
-      color: #fcfdf7;
+      color: #FCFDF7;
       float: left; }
     .front-page-feature .title-wrap h3 span {
-      color: #fcfdf7;
+      color: #FCFDF7;
       float: right; }
     .front-page-feature .title-wrap h3 a, .front-page-feature .title-wrap h3 span {
       margin: 0px; }
@@ -772,7 +772,7 @@ ul#footer-menu li {
   .front-page-feature .front-page-feature-content {
     background-color: rgba(231, 245, 196, 0.5); }
   .front-page-feature .product-preview {
-    background-color: #fcfdf7; }
+    background-color: #FCFDF7; }
     .front-page-feature .product-preview .product-tagline {
       text-align: center; }
   @media (min-width: 600px) {
@@ -789,34 +789,34 @@ ul#footer-menu li {
     .front-page-feature img {
       overflow: hidden;
       max-width: 98%;
-      border-top: 3px solid #fcfdf7; }
+      border-top: 3px solid #FCFDF7; }
     .front-page-feature .product-preview.block-grid-item {
       width: 100%;
       height: auto;
       float: none;
       border: none;
       margin-bottom: 12px;
-      border-bottom: 6px solid #e7f5c4; }
+      border-bottom: 6px solid #E7F5C4; }
       .front-page-feature .product-preview.block-grid-item:first-child img {
         border-top: none; }
     .front-page-feature h5 {
       font-size: 2em;
       padding-top: 1em; }
     .front-page-feature .product-preview {
-      background-color: #e7f5c4; }
+      background-color: #E7F5C4; }
     .front-page-feature a {
       color: #597516; }
       .front-page-feature a:visited {
         color: #597516; }
       .front-page-feature a:hover {
-        color: #522b6e; } }
+        color: #829A4D; } }
 
 body {
-  background-color: #e7f5c4; }
+  background-color: #E7F5C4; }
 
 .content {
-  background-color: #cde495;
-  border: 1px solid #a3be5f;
+  background-color: #CDE495;
+  border: 1px solid #A3BE5F;
   padding: 5%;
   background-color: white; }
 
@@ -826,7 +826,7 @@ body {
 .cwp-code-snippet {
   border: 1px solid black; }
   .cwp-code-snippet .code-snippet-description {
-    background: #e7f5c4;
+    background: #E7F5C4;
     margin-bottom: 0px;
     padding: 4px; }
   .cwp-code-snippet pre {
@@ -838,4 +838,4 @@ body {
 .post-content a {
   color: #597516 !important; }
   .post-content a:hover {
-    color: #a3be5f !important; }
+    color: #A3BE5F !important; }
