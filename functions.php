@@ -11,7 +11,7 @@
  * @package CWP Theme
  * @since 0.1.0
  */
- 
+
 // Useful global constants
 define( 'CWP_THEME_VERSION', '0.1.0' );
 
@@ -42,15 +42,20 @@ add_action( 'after_setup_theme', 'cwp_theme_setup' );
 function cwp_theme_scripts_styles() {
    wp_deregister_style('hemingway_style' );
 
-   wp_enqueue_style( 'hemingway_style', get_template_directory_uri() . "/style.css" );
-
    $postfix = ( defined( 'SCRIPT_DEBUG' ) && true === SCRIPT_DEBUG ) ? '' : '.min';
 
    wp_enqueue_script( 'cwp_theme', get_stylesheet_directory_uri() . "/assets/js/cwp_theme{$postfix}.js", array(), CWP_THEME_VERSION, true );
 
    wp_localize_script( 'cwp_theme', 'cwp_theme', array( 'adminajax' => admin_url( 'admin-ajax.php') ) );
 
+
+
+   wp_enqueue_style( 'bootstrap', '//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css' );
+   wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' );
+
    wp_enqueue_style( 'cwp_theme', get_stylesheet_directory_uri() . "/assets/css/cwp_theme{$postfix}.css", array(), CWP_THEME_VERSION );
+
+
 
 
 
@@ -132,7 +137,7 @@ function cwp_theme_cf_wporg_link( $text = false) {
  * Include Dependencies.
  */
 add_action( 'init', function() {
-   include_once( dirname(__FILE__ ) . '/vendor/autoload.php' );
+   //include_once( dirname(__FILE__ ) . '/vendor/autoload.php' );
 });
 
 /**
@@ -181,7 +186,7 @@ add_action( 'init', function() {
 
 /**
  * Register widget area to be used on EDD pages
-*/
+ */
 add_action( 'widgets_init', array( cwp_theme_get_edd_class(), 'edd_widget_area' ) );
 
 function cwp_theme_get_edd_class() {
@@ -225,20 +230,20 @@ add_filter( 'dsgnwrks_snippet_display', function( $snippet_html, $atts, $snippet
  * Hook into the_content
  */
 add_action( 'init',
-   function() {
-      add_filter( 'the_content',
-         function( $content ) {
-            if ( is_page( CWP_Docs::$docs_page_id ) ) {
-               $content = CWP_Docs::content_filter( $content );
-            }
+    function() {
+       add_filter( 'the_content',
+           function( $content ) {
+              if ( is_page( CWP_Docs::$docs_page_id ) ) {
+                 $content = CWP_Docs::content_filter( $content );
+              }
 
-            return $content;
+              return $content;
 
-         },
-      35 );
+           },
+           35 );
 
-   },
-35 );
+    },
+    35 );
 
 /**
  * Remove EDD's microdata on post title in the "After Download" Pods Template
@@ -259,13 +264,13 @@ add_filter( 'pods_templates_pre_template',
  */
 add_filter( 'pods_templates_post_template',
     function( $code, $template ) {
-      if ( isset( $template[ 'name'] ) && 'After Download' == $template[ 'name'] ) {
-         add_filter( 'the_title', 'edd_microdata_title', 10, 2 );
-      }
+       if ( isset( $template[ 'name'] ) && 'After Download' == $template[ 'name'] ) {
+          add_filter( 'the_title', 'edd_microdata_title', 10, 2 );
+       }
 
        return $code;
 
-   }, 10, 2
+    }, 10, 2
 );
 
 /**
@@ -326,9 +331,9 @@ function cwp_bio_box( $who, $bio ) {
 
       $out[] = '<div class="about-box">';
       $out[] = sprintf( '<div class="about-left">%1s %2s</div>',
-             '<div class="gravatar-box">' . get_avatar( $data['gravatar'] ) . '</div>',
-             '<div class="social">' . $social_html . '</div>'
-          );
+          '<div class="gravatar-box">' . get_avatar( $data['gravatar'] ) . '</div>',
+          '<div class="social">' . $social_html . '</div>'
+      );
       $out[] = '<div class="about-right"><div class="bio">'.$bio.'</div></div>';
       $out[] = '</div>';
       $out[] = '<div class="clear"></div>';
@@ -345,3 +350,22 @@ function cwp_bio_box( $who, $bio ) {
 
 }
 
+/**
+ * Use the "plugins-page.php" page for single posts in download and free_plugin
+ *
+ * @uses "template_include"
+ */
+add_filter( 'template_include', function ( $template ) {
+   if ( is_single( ) && in_array( get_post_type(), array( 'free_plugin', 'download' ) ) ) {
+      $new_template = locate_template( array( 'plugins-page.php' ) );
+      if ( file_exists( $new_template ) && '' != $new_template ) {
+         include( dirname( __FILE__ ) . '/includes/CWP_Plugin_Page.php' );
+         $template = $new_template;
+      }
+
+      return $template;
+
+   }
+
+   return $template;
+}, 99 );
