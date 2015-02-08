@@ -1416,29 +1416,24 @@ body {
 .nav {
   font-size: 14px;
   color: #f6f9f0; }
-
-.nav ul {
-  padding: 0px;
-  margin: 0px;
-  list-style: none;
-  text-align: right; }
-
-.nav li {
-  display: inline-block;
-  margin-right: 20px;
-  text-align: right; }
-
-.nav li:last-child {
-  margin-right: 0px; }
-
-.nav a {
-  color: #f6f9f0;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-weight: 900; }
-
-.nav a:hover {
-  color: #ff9f74; }
+  .nav ul {
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+    text-align: right; }
+  .nav li {
+    display: inline-block;
+    margin-right: 20px;
+    text-align: right; }
+    .nav li:last-child {
+      margin-right: 0px; }
+  .nav a {
+    color: #f6f9f0;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 900; }
+    .nav a:hover {
+      color: #ff9f74; }
 
 /*----- Header Slider----*/
 .banner {

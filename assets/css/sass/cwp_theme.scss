@@ -30,8 +30,7 @@ body {
 @import "social";
 @import "footer";
 
-body
-{
+body {
   background-color: $white;
   font-family: 'Lato', sans-serif !important;
 
@@ -39,8 +38,7 @@ body
 
 /*----- Logo & Nav -----*/
 
-.top
-{
+.top {
   position:absolute;
   z-index:999;
   width:100%;
@@ -49,45 +47,35 @@ body
 
 
 
-.nav
-{
+.nav {
   font-size:14px;
   color:$white;
+  ul {
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+    text-align: right;
+  }
+  li {
+    display: inline-block;
+    margin-right: 20px;
+    text-align: right;
+    &:last-child {
+      margin-right: 0px;
+    }
+  }
+  a {
+    color: $white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 900;
+    &:hover {
+      color:#ff9f74;
+    }
+  }
 
 }
 
-.nav ul
-{
-  padding:0px;
-  margin:0px;
-  list-style:none;
-  text-align:right;
-}
-
-.nav li
-{
-  display:inline-block;
-  margin-right:20px;
-  text-align:right;
-}
-
-.nav li:last-child
-{
-  margin-right:0px;
-}
-
-.nav a
-{
-  color:$white;
-  text-decoration:none;
-  text-transform:uppercase;
-  font-weight:900;
-}
-
-.nav a:hover
-{
-  color:#ff9f74;
-}
 
 /*----- Header Slider----*/
 .banner {
