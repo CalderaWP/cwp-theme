@@ -145,6 +145,7 @@ add_action( 'init', function() {
  */
 add_action( 'init', function() {
    include( dirname( __FILE__ ) . '/includes/CWP_Theme_Caldera_Answers.php' );
+   include( dirname( __FILE__ ) . '/includes/CWP_Data.php' );
 
    include( dirname( __FILE__ ) . '/includes/baldrick.php' );
 
@@ -356,7 +357,7 @@ function cwp_bio_box( $who, $bio ) {
  * @uses "template_include"
  */
 add_filter( 'template_include', function ( $template ) {
-   if ( is_single( ) && in_array( get_post_type(), array( 'free_plugin', 'download' ) ) ) {
+   if ( cwp_theme_is_plugin_page() ) {
       $new_template = locate_template( array( 'plugins-page.php' ) );
       if ( file_exists( $new_template ) && '' != $new_template ) {
          include( dirname( __FILE__ ) . '/includes/CWP_Plugin_Page.php' );
@@ -369,3 +370,39 @@ add_filter( 'template_include', function ( $template ) {
 
    return $template;
 }, 99 );
+
+/**
+ * Plugin Page Data
+ *
+ * @return \CWP_Plugin_Page
+ */
+function cwp_theme_plugin_data() {
+   global $plugin_data;
+   if ( ! is_object( $plugin_data ) ) {
+      global $post;
+      $plugin_data = new CWP_Plugin_Page( $post );
+   }
+
+   return $plugin_data;
+}
+
+function cwp_theme_data() {
+   if ( cwp_theme_is_plugin_page() ) {
+      return cwp_theme_plugin_data();
+   }
+}
+
+function cwp_theme_is_plugin_page() {
+   if ( is_single( ) && in_array( get_post_type(), array( 'free_plugin', 'download' ) ) ) {
+      return true;
+   }
+}
+
+function cwp_theme_cwp_logo_id( $transperant = true ) {
+   if ( $transperant ) {
+      return 771;
+
+   }
+
+   return 773;
+}

@@ -9,24 +9,8 @@
  * @copyright 2015 Josh Pollock
  */
 
-class CWP_Plugin_Page {
+class CWP_Plugin_Page extends CWP_Data {
 
-	/**
-	 * @var object|\Pods
-	 */
-	private $pod;
-
-	/**
-	 * @var object|\WP_Post
-	 */
-	private $post;
-
-	/**
-	 * Attributes for use in header.
-	 *
-	 * @var array
-	 */
-	public $header_atts;
 
 	/**
 	 * Array of prices for this product
@@ -36,11 +20,6 @@ class CWP_Plugin_Page {
 	public $pricing;
 
 	/**
-	 * CWP Logo HTML
-	 *
-	 * @var string
-	 */
-	public $logo;
 
 	/**
 	 * Constructor for class
@@ -57,7 +36,12 @@ class CWP_Plugin_Page {
 
 
 	}
-	
+
+	/**
+	 * Construct and cache main page content
+	 *
+	 * @return array|bool|mixed|string
+	 */
 	public function page() {
 		$key = md5( __CLASS__ . $this->post->ID );
 		if ( false == ( $page = wp_cache_get( $key ) )  ) {
@@ -72,34 +56,7 @@ class CWP_Plugin_Page {
 		return $page;
 	}
 
-	protected function header_atts() {
-		$fields = array(
-			'tagline' => 'product_tagline',
-			'header_bg' => 'header_image',
-			'title' => 'post_title',
 
-		);
-
-		$atts = array();
-		foreach( $fields as $key => $field ) {
-			$atts[ $key ] =  $this->pod()->display( $field );
-		}
-
-		return $atts;
-
-	}
-
-	/**
-	 * @return object|\Pods
-	 */
-	public function pod( ) {
-
-		$this->pod = pods( $this->post->post_type, $this->post->ID );
-
-
-		return $this->pod;
-
-	}
 
 	private function features() {
 
@@ -191,30 +148,6 @@ class CWP_Plugin_Page {
 
 	}
 
-	protected function _feature( $data ) {
-		$image = sprintf( '<img class="alignleft size-full " src="%1s" alt="%2s"  />', $data[ 'image' ][0], $data[ 'image' ][1] );
-		$out[] = sprintf( '<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-center">', $image );
-		$out[] = sprintf(
-			'<div class="col-lg-pull-6 col-md-6 col-sm-12 col-xs-12">
-				<h1>%1s</h1>
-				<div class="txt">%2s</div>
-				<div class="getstarted">%3s</div>
-			</div>',
-			$data[ 'title' ],
-			$data[ 'text' ],
-			sprintf(
-				'<a href="%1s" title="%2s">%3s</a>',
-				get_permalink( $data[ 'learn_more' ] ),
-				$data[ 'learn_more_link_text' ],
-				$data[ 'learn_more_link_text' ]
-			)
-		);
-		$out[] = '</div>';
-
-		return implode( '', $out );
-
-	}
-
 	protected function pricing() {
 		$prices = edd_get_variable_prices( $this->post->ID );
 
@@ -299,37 +232,6 @@ class CWP_Plugin_Page {
 	}
 
 
-	protected function testimonals_data() {
-		return array();
-	}
-
-	public function testimonials_section() {
-		if ( empty( $this->testimonals_data() ) ) {
-			return;
-		}
-
-		$out[] = '<!--Testimonials Section--><section class=" testimonial-bg"><div id="testimonial" class="flexslider "><div class="container"><ul class="slides">';
-		foreach( $this->testimonals_data() as $testimonial ) {
-			$out[] = $this->testimonial( $testimonial );
-		}
-	}
-
-	protected function testimonial( $data ) {
-		return sprintf(
-			'<li>
-
-					<div class="testimonial-photo"><img src="images/body/testimonial-img.png" alt=""></div>
-					<div class="container">
-						<div  class="col-lg-12 col-md-12 col-sm-12 col-xs-12 testimonial-content">
-							%1s
-							</p>
-						</div>
-					</div>
-				</li>', wp_oembed_get( esc_url( $data[ 'tweet_url' ] ) )
-		);
-
-	}
-
 	public function contact_section() {
 		return sprintf(
 			'<!--Contact Section--><section id="contact">
@@ -374,15 +276,3 @@ class CWP_Plugin_Page {
 
 
 
-/**
- * @return \CWP_Plugin_Page
- */
-function cwp_theme_plugin_data() {
-	global $plugin_data;
-	if ( ! is_object( $plugin_data ) ) {
-		global $post;
-		$plugin_data = new CWP_Plugin_Page( $post );
-	}
-
-	return $plugin_data;
-}

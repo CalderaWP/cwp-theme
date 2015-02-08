@@ -1,6 +1,6 @@
 <?php
-	$data =  cwp_theme_plugin_data();
-$atts = $data->header_atts;
+	$data =  cwp_theme_data();
+	$atts = $data->header_atts;
 ?>
 
 <!DOCTYPE html>
@@ -13,7 +13,6 @@ $atts = $data->header_atts;
 
 
 
-																		
 		<title><?php wp_title('|', true, 'right'); ?></title>
 				
 		<?php if ( is_singular() ) wp_enqueue_script( "comment-reply" ); ?>

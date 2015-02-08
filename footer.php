@@ -9,7 +9,7 @@
  * @copyright 2015 Josh Pollock
  */
 
-$data = cwp_theme_plugin_data();
+$data = cwp_theme_data();
 ?>
 
 <section id="footer">

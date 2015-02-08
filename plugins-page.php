@@ -1,6 +1,6 @@
 <?php
 /**
- * Template used for
+ * Template used for download and free_plugin CPT single view.
  *
  * @package   @cwp-theme
  * @author    Josh Pollock <Josh@JoshPress.net>
@@ -22,6 +22,6 @@ echo $data->page();
 		</div>
 	</div>
 </section>
-
+<?php get_footer(); ?>
 
 
