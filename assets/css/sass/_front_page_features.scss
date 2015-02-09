@@ -50,6 +50,7 @@
 
   .front-page-feature-content {
     background-color: transparentize($primaryTint2, .5);
+    text-align:left;
   }
 
   .product-preview {
@@ -65,7 +66,7 @@
       margin: 0 25%;
     }
     h5{
-      font-size: 2.5em;
+      font-size: 2em;
     }
 
   }
