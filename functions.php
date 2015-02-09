@@ -51,12 +51,9 @@ function cwp_theme_scripts_styles() {
 
 
    wp_enqueue_style( 'bootstrap', '//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css' );
-   wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' );
+   wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Lato:100,400,900,400italic,700italic,900italic|Merriweather:400,700,300' );
 
    wp_enqueue_style( 'cwp_theme', get_stylesheet_directory_uri() . "/assets/css/cwp_theme{$postfix}.css", array(), CWP_THEME_VERSION );
-
-
-
 
 
 
@@ -357,15 +354,17 @@ function cwp_bio_box( $who, $bio ) {
  * @uses "template_include"
  */
 add_filter( 'template_include', function ( $template ) {
+   $new_template = false;
    if ( cwp_theme_is_plugin_page() ) {
       $new_template = locate_template( array( 'plugins-page.php' ) );
-      if ( file_exists( $new_template ) && '' != $new_template ) {
-         include( dirname( __FILE__ ) . '/includes/CWP_Plugin_Page.php' );
-         $template = $new_template;
-      }
 
-      return $template;
+   }elseif ( is_page() || is_front_page()  ) {
+      $new_template = locate_template( array( 'single.php' ) );
+   }
 
+   if (  $new_template && file_exists( $new_template ) ) {
+
+      $template = $new_template;
    }
 
    return $template;
@@ -376,33 +375,127 @@ add_filter( 'template_include', function ( $template ) {
  *
  * @return \CWP_Plugin_Page
  */
-function cwp_theme_plugin_data() {
+function cwp_theme_plugin_data( $post ) {
    global $plugin_data;
+
    if ( ! is_object( $plugin_data ) ) {
-      global $post;
+      include( dirname( __FILE__ ) . '/includes/CWP_Plugin_Page.php' );
       $plugin_data = new CWP_Plugin_Page( $post );
    }
 
    return $plugin_data;
 }
 
+/**
+ * Gets current instance of the Theme Data class
+ *
+ * @return \CWP_Data|\CWP_Plugin_Page
+ */
 function cwp_theme_data() {
-   if ( cwp_theme_is_plugin_page() ) {
-      return cwp_theme_plugin_data();
+   if ( is_single() || is_page() ) {
+      global $post;
+      if ( cwp_theme_is_plugin_page() ) {
+
+         return cwp_theme_plugin_data( $post );
+
+      }else{
+         global $single_post_data;
+         if ( ! is_object( $single_post_data ) ) {
+            $single_post_data = new CWP_Data( $post );
+         }
+
+         return $single_post_data;
+      }
+
    }
+
 }
 
+/**
+ * Determine if is a plugin page
+ *
+ * @return bool
+ */
 function cwp_theme_is_plugin_page() {
-   if ( is_single( ) && in_array( get_post_type(), array( 'free_plugin', 'download' ) ) ) {
+   if ( is_single() && in_array( get_post_type(), array( 'free_plugin', 'download' ) ) ) {
       return true;
    }
+
 }
 
-function cwp_theme_cwp_logo_id( $transperant = true ) {
-   if ( $transperant ) {
-      return 771;
+/**
+ * Get ID of out logo
+ *
+ * @return int
+ */
+function cwp_theme_cwp_logo_id() {
+   return 793;
 
+}
+
+/**
+ * Add excerpts and thumbnails for the  page post type
+ */
+add_action( 'init', function() {
+   add_post_type_support( 'page', array( 'excerpt', 'thumbnail' ) );
+
+});
+
+/**
+ * Themes setup
+ */
+add_action( 'after_setup_theme', function() {
+
+   // Automatic feed
+   add_theme_support( 'automatic-feed-links' );
+
+   // Custom background
+   add_theme_support( 'custom-background' );
+
+   // Post thumbnails
+   add_theme_support( 'post-thumbnails' );
+   add_image_size( 'post-image', 676, 9999 );
+
+   // Post formats
+   add_theme_support( 'post-formats', array( 'video', 'aside', 'quote' ) );
+
+   // Custom header
+   $args = array(
+       'width'         => 1280,
+       'height'        => 416,
+       'default-image' => get_template_directory_uri() . '/images/header.jpg',
+       'uploads'       => true,
+       'header-text'  	=> false
+
+   );
+   add_theme_support( 'custom-header', $args );
+
+
+   // Make the theme translation ready
+   load_theme_textdomain('cwp-theme', get_template_directory() . '/languages');
+
+   $locale = get_locale();
+   $locale_file = get_template_directory() . "/languages/$locale.php";
+   if ( is_readable($locale_file) ) {
+      require_once($locale_file);
    }
 
-   return 773;
-}
+
+});
+
+/**
+ * Add main widgets
+ */
+add_action( 'widgets_init', function () {
+
+   register_sidebar( array(
+       'name'          => __( 'Sidebar', 'cwp-theme' ),
+       'id'            => 'sidebar',
+       'description'   => __( 'Widgets in this area will be shown in the sidebar.', 'cwp-theme' ),
+       'before_title'  => '<h3 class="widget-title">',
+       'after_title'   => '</h3>',
+       'before_widget' => '<div class="widget %2$s"><div class="widget-content">',
+       'after_widget'  => '</div><div class="clear"></div></div>'
+   ) );
+});
+

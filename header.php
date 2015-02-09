@@ -1,7 +1,8 @@
 <?php
 	$data =  cwp_theme_data();
 	$atts = $data->header_atts;
-?>
+
+ ?>
 
 <!DOCTYPE html>
 
@@ -25,15 +26,15 @@
 
 		<div class="big-wrapper">
 	
-			<div class="header-cover section bg-dark-light no-padding" style="background-image: url(<?php echo esc_url( $atts[ 'header_bg' ] ); ?>);background-repeat: no-repeat; background-position: 50%;background-size: 30%;background-color: #0A7A6F;">
+			<div class="header-cover section bg-dark-light no-padding" style="background-image: url(<?php echo esc_url( $atts[ 'header_bg' ] ); ?>);background-repeat: no-repeat; background-position: 50%;background-size: <?php echo $atts[ 'header_size' ]; ?>;background-color: #0A7A6F;">
 
 				<div id="home" class="top">
 					<div class="container">
 						<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 logo">
-							<?php echo $data->logo; ?>
+							<a href="<?php echo esc_url( home_url() ); ?>" title="<?php echo esc_attr( get_bloginfo( 'title' ) );?>" ><?php echo $atts[ 'logo' ]; ?></a>
 						</div>
 						<!--Navigation-->
-						<div class="col-lg-4 col-md-5 col-sm-12 col-xs-12 pull-right ">
+						<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 pull-right ">
 							<div class="nav">
 								<?php echo $data->menu(); ?>
 							</div>

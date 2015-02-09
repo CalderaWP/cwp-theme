@@ -1,30 +1,40 @@
 //Sidebar
-.widget {
-  @include general( 5% );
-  background-color: $background;
-}
+aside#sidebar {
+  padding: 24px;
 
-@media (min-width: 700px) {
   .widget {
-    padding: 15%;
-  }
-}
+    margin: 24px;
+    background-color: $background;
+    &:last-child {
+      padding-bottom: 0px;
+      margin-bottom: 0px;
+    }
+    &:first-child {
+      padding-top: 0px;
+      margin-top: 0px;
 
-@for $i from 1 through 12 {
-  .widget.widget_caldera_forms_widget.edd-widget {
-    .col-sm-#{$i} {
-      width: 100%;
-      display: block;
+    }
+
+  }
+
+  @media (min-width: 700px) {
+    .widget {
+      padding: 15%;
     }
   }
-  .live-gravatar {
-    display: none;
+
+  @for $i from 1 through 12 {
+    .widget.widget_caldera_forms_widget.edd-widget {
+      .col-sm-#{$i} {
+        width: 100%;
+        display: block;
+      }
+    }
+    .live-gravatar {
+      display: none;
+    }
+
   }
 
-}
 
-.widget:last-child {
-  padding-bottom: 0px;
-  border-bottom: 1px solid $cwp_green;
 }
-

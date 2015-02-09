@@ -20,6 +20,20 @@ class CWP_Plugin_Page extends CWP_Data {
 	public $pricing;
 
 	/**
+	 * Is this a CF Add-on?
+	 *
+	 * @var bool
+	 */
+	public $cf;
+
+	/**
+	 * Is plugin coming soon?
+	 *
+	 * @var bool
+	 */
+	public $coming_soon = false;
+
+	/**
 
 	/**
 	 * Constructor for class
@@ -28,13 +42,46 @@ class CWP_Plugin_Page extends CWP_Data {
 	 */
 	public function __construct( $post) {
 		$this->post = $post;
-		$this->header_atts = $this->header_atts();
 		$this->pod = $this->pod();
-		$this->logo = wp_get_attachment_image( 771 );
+		$this->logo = wp_get_attachment_image( cwp_theme_cwp_logo_id() );
+		$this->header_atts = $this->header_atts();
+
+
 		$this->pricing = $this->pricing();
+		$this->menu_name = 'product_page_menu';
+		$this->contact_form_id = 'CF54d702af07cef';
+
+		if ( $this->pod->display( 'cf_add_on') ) {
+			$this->cf = true;
+		}
+
+		if ( get_post_meta( $this->post->ID, 'edd_coming_soon', true  ) ) {
+			$this->coming_soon = true;
+		}
+
+	}
+
+	/**
+	 * Set header atts;
+	 *
+	 * @return mixed
+	 */
+	protected function header_atts() {
+		$fields = array(
+			'tagline' => 'product_tagline',
+			'header_bg' => 'header_image',
+			'title' => 'post_title',
 
 
+		);
+		foreach ( $fields as $key => $field ) {
+			$atts[ $key ] = $this->pod()->display( $field );
+		}
 
+		$atts [ 'header_size' ] = '30%';
+		$atts[ 'logo' ] = $this->logo;
+
+		return $atts;
 	}
 
 	/**
@@ -45,10 +92,18 @@ class CWP_Plugin_Page extends CWP_Data {
 	public function page() {
 		$key = md5( __CLASS__ . $this->post->ID );
 		if ( false == ( $page = wp_cache_get( $key ) )  ) {
-			$page[] = $this->feature_section();
+			$page[] = $this->post_content();
+			if ( ! $this->coming_soon ) {
+				$page[] = $this->feature_section();
+			}
 			$page[] = $this->testimonials_section();
-			$page[] = $this->price_table();
+			if ( 'download' == $this->post->post_type ) {
+				$page[] = $this->price_table();
+			}
 			$page[] = $this->contact_section();
+			if ( ! $this->coming_soon ) {
+				$out[] = $this->docs();
+			}
 			$page = implode( '', $page );
 			wp_cache_set( $key, $page, '', 399 );
 		}
@@ -56,10 +111,14 @@ class CWP_Plugin_Page extends CWP_Data {
 		return $page;
 	}
 
-
-
+	/**
+	 * Features Data
+	 *
+	 * @return array
+	 */
 	private function features() {
 
+		$features = array();
 		for ( $i = 1; $i <= 3; $i++) {
 
 			foreach(
@@ -93,6 +152,11 @@ class CWP_Plugin_Page extends CWP_Data {
 
 	}
 
+	/**
+	 * Create HTML for the features section.
+	 *
+	 * @return string
+	 */
 	public function feature_section() {
 		$out[] = '<!--Features Section--><section class="feature-styles" id="features" >';
 		$i = 0;
@@ -110,6 +174,14 @@ class CWP_Plugin_Page extends CWP_Data {
 
 	}
 
+	/**
+	 * Create HTML for a specific header
+	 *
+	 * @param array $data Feature data.
+	 * @param bool $left Push?
+	 *
+	 * @return string
+	 */
 	protected function feature( $data, $left ) {
 		$image = sprintf( '<img class="plugin-features-image" src="%1s" alt="%2s"  />', $data[ 'image' ][0], $data[ 'image' ][1] );
 		$link = sprintf(
@@ -148,6 +220,11 @@ class CWP_Plugin_Page extends CWP_Data {
 
 	}
 
+	/**
+	 * Get pricing details.
+	 *
+	 * @return array
+	 */
 	protected function pricing() {
 		$prices = edd_get_variable_prices( $this->post->ID );
 
@@ -155,11 +232,15 @@ class CWP_Plugin_Page extends CWP_Data {
 			'download_id' => $this->post->ID,
 			'text'        => __( 'Choose', 'cwp-theme' ),
 		);
+
 		foreach( $prices as $i => $price ) {
-			$args[ 'price_id' ] = $price[ 'index' ];
+
+
+			$args[ 'price_id' ] = $i;
 
 			$link = edd_get_purchase_link( $args  );
-			$link = str_replace( 'Checkout</a>',  __( 'Choose', 'cwp-theme' ).'</a>', $link );
+
+
 			$link = sprintf( '<div id="purchase-%1s">%2s</div>', $i, $link );
 
 			$prices[ $i ][ 'link' ] = $link;
@@ -175,8 +256,17 @@ class CWP_Plugin_Page extends CWP_Data {
 		return $prices;
 	}
 
-
+	/**
+	 * Output a pricing table's HTML
+	 *
+	 * @return string|void
+	 */
 	public function price_table() {
+		if ( $this->coming_soon ) {
+			return;
+		}
+
+		$out[] = '<script>jQuery( document ).ready(function() {jQuery( ".edd-add-to-cart-label" ).html( "Choose" );});</script>';
 		$out[] = sprintf( '<!--Pricing Table Section--><section id="pricing"><div class="container">
 <div class="container">%1s</div>', $this->purchase_cta());
 		$i = 1;
@@ -190,13 +280,7 @@ class CWP_Plugin_Page extends CWP_Data {
 						<div class="duration">%3s</div>
 					</div>
 					<div class="featcontent">
-						<div class="feat-list">
-							<ul>
-								<li>Support & Updates for One Year</li>
-							</ul>
-						</div>
 						%4s
-
 					</div>
 				</div>',
 				$i,
@@ -215,6 +299,11 @@ class CWP_Plugin_Page extends CWP_Data {
 
 	}
 
+	/**
+	 * The CTA before pricing tables
+	 *
+	 * @return string
+	 */
 	protected function purchase_cta() {
 		$cta = array( 'header', 'text' );
 		$out = false;
@@ -231,48 +320,33 @@ class CWP_Plugin_Page extends CWP_Data {
 
 	}
 
+	/**
+	 * Output docs section
+	 *
+	 * @return string
+	 */
+	public function docs() {
 
-	public function contact_section() {
+		if ( $this->cf ) {
+			$docs = $this->pod->template( 'After Download' );
+
+		}else{
+			$docs = cep_render_easy_pod( 'auto_docs_list' );
+		}
 		return sprintf(
-			'<!--Contact Section--><section id="contact">
-				<div class="container contact-info">%1s</div>
-				<div class="container" id="contact-inner">
-					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 contact">
-						<h1>Have A Question?</h1>
-						<h2>If you have a pre-sale question, or are a registered user who needs support, or just want to say hi, get in touch.</h2>
+			'<!--Docs Links -->
+				<section id="docs">
+					<div class="container">
+						<h1>Documentation</h1>
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							%1s
+						</div>
 					</div>
-				</div>
-				<div class="container contact-form">
-					%2s
-				</div>
-			</section>',
-			CWP_Social::cwp_social_links(),
-			Caldera_Forms::render_form( 'CF54d702af07cef' )
+				</section>', $docs
 		);
 
-	}
-
-
-	public function menu( $menu_name = 'product_page_menu') {
-
-
-		$menu_items = wp_get_nav_menu_items($menu_name);
-
-		$menu_list = '<ul id="menu-' . $menu_name . '" class="navi">';
-
-		foreach ( (array) $menu_items as $key => $item ) {
-			$title = $item->title;
-			$url = $item->url;
-			$menu_list .= '<li><a href="' . esc_url( $url ) . '" title="' . esc_attr( $item->post_excerpt ) .'">' . $title . '</a></li>';
-		}
-		$menu_list .= '</ul>';
-
-		return $menu_list;
-
 
 	}
+
 
 }
-
-
-

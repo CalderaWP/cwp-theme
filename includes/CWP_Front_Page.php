@@ -18,10 +18,15 @@ class CWP_Front_Page extends CWP_Front_Page_Data {
 	 */
 	public static function front_page_features() {
 		$data = self::front_page_feature_sections();
-		$out = array();
+
+		$out[] = '<section id="front-page-features">';
+		$out[] = '<div class="container"><div class="content front-page-content">';
 		foreach( $data as $section ) {
+			$out[] = '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">';
 			$out[] = self::front_page_feature( $section );
+			$out[] = '</div>';
 		}
+		$out[] ='</div></div></section>';
 
 		return implode( '', $out );
 
@@ -63,7 +68,9 @@ class CWP_Front_Page extends CWP_Front_Page_Data {
 			$out[] = sprintf( '<div class="front-page-feature-content">%1s</div>', implode( '', $content ) );
 		}
 
-		$style_tag = cwp_theme_background_style_tag( $data[ 'background' ], $data[ 'background_style' ] );
+		//$style_tag = cwp_theme_background_style_tag( $data[ 'background' ], $data[ 'background_style' ] );
+
+		$style_tag = '';
 
 		return sprintf( '<div class="front-page-feature" %1s >%2s</div>', $style_tag, implode( '', $out ) );
 
