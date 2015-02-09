@@ -32,7 +32,15 @@
 					    <?php echo cwp_theme_data()->menu( 'plugins' ); ?>
 				    </div>
 			    </div>
-	     <?php endif; ?>
+	     <?php endif;
+		if ( CWP_Theme_EDD::is_checkout() ) : ?>
+			<!--Navigation-->
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<div class="nav">
+					<?php echo cwp_theme_data()->menu( 'cart' ); ?>
+				</div>
+			</div>
+		<?php endif; ?>
 
 
 	</div>

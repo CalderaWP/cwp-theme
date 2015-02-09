@@ -301,6 +301,19 @@ class CWP_Theme_EDD extends CWP_Theme_EDD_Product_IDs {
 	}
 
 	/**
+	 * If is a checkout page, return true.
+	 *
+	 * @return bool
+	 */
+	public static function is_checkout() {
+		global $post;
+		if ( is_a( 'WP_Post', $post) && in_array( $post->ID, array( 5,6,7,8 ) ) ) {
+			return true;
+		}
+
+	}
+
+	/**
 	 * Class instance
 	 *
 	 * @var \CWP_Theme_EDD
