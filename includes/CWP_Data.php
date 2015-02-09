@@ -57,7 +57,7 @@ class CWP_Data {
 	/**
 	 * Constructor for class
 	 *
-	 * @param WP_Post|object $post
+	 * @param WP_Post|object|bool $post Post object or false if on archive page
 	 * @param bool|int  $header_id Optional. ID of logo for page. If false, it will set current post featured image, or CWP logo.
 	 * @param bool||Pods $use_pods Optional. To use Pods or not. If is true, a Pods object will be created. If is a Pods object, that will be used.
 	 */

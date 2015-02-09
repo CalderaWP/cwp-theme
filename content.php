@@ -1,11 +1,19 @@
-<section class="container" id="single-post">
+<section class="container single-post" >
 	<div class="post-header content <?php post_class(); ?>" id="post-<?php the_ID(); ?>">
 
 
-    <h2 class="post-title"><?php the_title(); ?></h2>
+		<header class="entry-header">
+			<?php
+			if ( is_single() ) :
+				the_title( '<h2 class="post-title">', '</h2>' );
+			else :
+				the_title( sprintf( '<h2 class="post-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
+			endif;
+			?>
+		</header><!-- .entry-header -->
 
     <div class="post-meta">
-		<?php if ( is_singular( 'post' ) ) : ?>
+		<?php if ( is_single() ) : ?>
 		    <span class="post-date"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_time(get_option('date_format')); ?></a></span>
 
 		    <span class="date-sep"> / </span>
@@ -49,9 +57,24 @@
 
 	<div class="container">
 		<div class="post-content col-lg-12 col-sm-12">
-			<?php the_content(); ?>
+			<?php
+				if ( is_single() || is_page() ) :
+					the_content();
+					wp_link_pages();
+				else : ?>
+				<div class="container">
+					<div class="col-lg-3 col-sm-12">
+						<?php the_post_thumbnail(); ?>
+					</div>
+					<div class="col-lg-9 col-sm-12">
+						<?php the_excerpt(); ?>
+						<?php printf( '<p class="read-more"><a href="%s" rel="bookmark">Read More</a></p>', esc_url( get_permalink() ) ); ?>
+					</div>
 
-			<?php wp_link_pages(); ?>
+				</div>
+			<?php endif; ?>
+
+
 
 		</div> <!-- /post-content -->
 	</div>

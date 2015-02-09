@@ -367,23 +367,10 @@ add_filter( 'template_include', function ( $template ) {
    }
 
    return $template;
+
 }, 99 );
 
-/**
- * Plugin Page Data
- *
- * @return \CWP_Plugin_Page
- */
-function cwp_theme_plugin_data( $post ) {
-   global $plugin_data;
 
-   if ( ! is_object( $plugin_data ) ) {
-      include( dirname( __FILE__ ) . '/includes/CWP_Plugin_Page.php' );
-      $plugin_data = new CWP_Plugin_Page( $post );
-   }
-
-   return $plugin_data;
-}
 
 /**
  * Gets current instance of the Theme Data class
@@ -394,8 +381,14 @@ function cwp_theme_data() {
    if ( is_single() || is_page() ) {
       global $post;
       if ( cwp_theme_is_plugin_page() ) {
+         global $plugin_data;
 
-         return cwp_theme_plugin_data( $post );
+         if ( ! is_object( $plugin_data ) ) {
+            include( dirname( __FILE__ ) . '/includes/CWP_Plugin_Page.php' );
+            $plugin_data = new CWP_Plugin_Page( $post );
+         }
+
+         return $plugin_data;
 
       }else{
          global $single_post_data;
@@ -405,6 +398,15 @@ function cwp_theme_data() {
 
          return $single_post_data;
       }
+
+   }else{
+      global $archive_data;
+      if ( ! is_object( $archive_data ) ) {
+         include( dirname( __FILE__ ) . '/includes/CWP_Archive_Data.php' );
+         $archive_data = new CWP_Archive_Data();
+      }
+
+      return $archive_data;
 
    }
 

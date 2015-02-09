@@ -48,7 +48,9 @@
 	<div class="container">
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="product-description">
 			<?php
-				echo sprintf( '<h2>%2s</h2>', $atts[ 'tagline' ] );
+			if (  ! is_home() || is_archive() ) {
+				echo sprintf( '<h2>%2s</h2>', $atts['tagline'] );
+			}
 			?>
 		</div>
 	</div>

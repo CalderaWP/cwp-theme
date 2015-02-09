@@ -22,4 +22,5 @@ if ( is_front_page() || is_page( 'about-calderawp' ) ) {
 	echo $data->contact_section();
 
 }
+
 get_footer();

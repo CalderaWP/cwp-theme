@@ -307,7 +307,7 @@ class CWP_Theme_EDD extends CWP_Theme_EDD_Product_IDs {
 	 */
 	public static function is_checkout() {
 		global $post;
-		if ( is_a( 'WP_Post', $post) && in_array( $post->ID, array( 5,6,7,8 ) ) ) {
+		if ( is_a( $post, 'WP_Post' ) && in_array( $post->ID, array( 5,6,7,8 ) ) ) {
 			return true;
 		}
 
