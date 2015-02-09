@@ -48,7 +48,7 @@ class CWP_Theme_EDD extends CWP_Theme_EDD_Product_IDs {
 	 * @return string
 	 */
 	public static function caldera_form_add_on_link() {
-		return CWP_Theme_EDD::category_link( 'caldera-forms-add-on', true, 'Add-ons for Caldera Forms' );
+		return self::product_link( 712 );
 
 	}
 

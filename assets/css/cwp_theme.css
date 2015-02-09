@@ -1116,10 +1116,11 @@ ul#footer-menu li {
   .front-page-feature a {
     color: #597516; }
   .front-page-feature .title-wrap {
-    background-color: #181f3a;
+    background-color: #0a7a6f;
     width: 100%;
     display: inline-block;
-    padding: 12px; }
+    padding: 12px 12px 32px;
+    line-height: 0; }
     .front-page-feature .title-wrap h3 a {
       color: #f6f9f0;
       float: left; }
@@ -1127,7 +1128,8 @@ ul#footer-menu li {
       color: #f6f9f0;
       float: right; }
     .front-page-feature .title-wrap h3 a, .front-page-feature .title-wrap h3 span {
-      margin: 0px; }
+      margin: 0px;
+      line-height: 0px; }
     @media (max-width: 600px) {
       .front-page-feature .title-wrap h3, .front-page-feature .title-wrap h3 span {
         display: block; }
