@@ -59,8 +59,11 @@ class CWP_Plugin_Page extends CWP_Data {
 		$this->menu_name = 'product_page_menu';
 		$this->contact_form_id = 'CF54d702af07cef';
 
-		if ( $this->pod->display( 'cf_add_on') ) {
+		$cf = $this->pod->field( 'cf_add_on');
+		if ( $this->pod->feild( 'cf_add_on') ) {
 			$this->cf = true;
+		}else{
+			$this->cf = false;
 		}
 
 		if ( get_post_meta( $this->post->ID, 'edd_coming_soon', true  ) ) {
@@ -110,7 +113,7 @@ class CWP_Plugin_Page extends CWP_Data {
 		$key = md5( __CLASS__ . $this->post->ID );
 		if ( false == ( $page = wp_cache_get( $key ) )  ) {
 			$page[] = $this->post_content();
-			if ( $this->coming_soon || ! $this->cf || true === $this->free ) {
+			if ( $this->coming_soon || $this->cf || true === $this->free ) {
 
 			}else{
 				$page[] = $this->feature_section();
