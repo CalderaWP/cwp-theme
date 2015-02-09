@@ -34,11 +34,17 @@
   }
 
   .add-on-search-result.product-preview h5 a {
-    font-size: 2em;
+    font-size: 1em;
   }
 
   .caldera-grid {
-
+     .btn-default {
+      @include cf_submit;
+       &:hover {
+         color: $white;
+         background-color: $primary;
+       }
+    }
   }
 }
 

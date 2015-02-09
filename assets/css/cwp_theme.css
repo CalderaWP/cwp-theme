@@ -1114,7 +1114,19 @@ ul#footer-menu li {
   .single-post ul#menu-plugins li a:hover {
     color: #a3be60; }
 .single-post .add-on-search-result.product-preview h5 a {
-  font-size: 2em; }
+  font-size: 1em; }
+.single-post .caldera-grid .btn-default {
+  background-image: none;
+  background-color: #7d923b;
+  color: #f6f9f0;
+  text-shadow: none;
+  border: none; }
+  .single-post .caldera-grid .btn-default:hover {
+    color: #7d923b;
+    background-color: #f6f9f0; }
+  .single-post .caldera-grid .btn-default:hover {
+    color: #f6f9f0;
+    background-color: #a3be60; }
 
 .content.front-page-content {
   background: none;

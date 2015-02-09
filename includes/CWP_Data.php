@@ -273,7 +273,7 @@ class CWP_Data {
 	 * @return string
 	 */
 	public function post_content() {
-		$out[] = '<section class="container" id="single-post"><div class="container"><div class="post-content col-lg-12 col-sm-12">';
+		$out[] = '<section class="container single-post"><div class="container"><div class="post-content col-lg-12 col-sm-12">';
 		$out[] = wptexturize( wpautop( do_shortcode( $this->post->post_content ) ) );
 		$out[] = '</div></div></section>';
 
