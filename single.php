@@ -1,6 +1,6 @@
 <?php
 /**
- * Sinlge post (not download or free_plugin) view
+ * Single post (not download or free_plugin) view
  *
  * @package   cwp-them
  * @author    Josh Pollock <Josh@JoshPress.net>
