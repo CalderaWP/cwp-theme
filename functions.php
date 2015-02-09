@@ -429,7 +429,11 @@ function cwp_theme_is_plugin_page() {
  *
  * @return int
  */
-function cwp_theme_cwp_logo_id() {
+function cwp_theme_cwp_logo_id( $white = false ) {
+   if ( $white ) {
+      return 816;
+   }
+
    return 793;
 
 }

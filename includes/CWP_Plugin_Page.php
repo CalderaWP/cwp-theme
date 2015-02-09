@@ -51,7 +51,7 @@ class CWP_Plugin_Page extends CWP_Data {
 			$this->pricing = $this->pricing();
 		}
 
-		$this->logo = wp_get_attachment_image( cwp_theme_cwp_logo_id() );
+		$this->logo = wp_get_attachment_image( cwp_theme_cwp_logo_id( true ) );
 		$this->header_atts = $this->header_atts();
 
 

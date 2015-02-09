@@ -65,7 +65,7 @@ class CWP_Data {
 		$this->post = $post;
 		$this->use_pods = $use_pods;
 
-		$this->logo = wp_get_attachment_image( cwp_theme_cwp_logo_id() );
+		$this->logo = wp_get_attachment_image( cwp_theme_cwp_logo_id( true ) );
 
 		if ( true === $use_pods ) {
 			$this->pod = $this->pod();
