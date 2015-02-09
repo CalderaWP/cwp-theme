@@ -1000,9 +1000,12 @@ aside#sidebar {
   aside#sidebar .live-gravatar {
     display: none; }
 
-div#cwp-social-links ul li {
-  display: inline;
-  border: none; }
+div#cwp-social-links ul {
+  margin: 0;
+  padding: 0; }
+  div#cwp-social-links ul li {
+    display: inline;
+    border: none; }
 div#cwp-social-links .genericon {
   font-size: 2em;
   margin: .25em; }
@@ -1010,7 +1013,7 @@ div#cwp-social-links a:hover {
   text-decoration: none; }
 
 .genericon:hover {
-  color: #597516; }
+  color: #f6f9f0; }
 
 .footer {
   font-size: 0.9em;

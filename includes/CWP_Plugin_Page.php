@@ -1,13 +1,5 @@
 <?php
-/**
- * Creates Markup and other data for a product page
- *
- * @package   @cwp_theme
- * @author    Josh Pollock <Josh@JoshPress.net>
- * @license   GPL-2.0+
- * @link      
- * @copyright 2015 Josh Pollock
- */
+
 
 class CWP_Plugin_Page extends CWP_Data {
 
@@ -34,6 +26,13 @@ class CWP_Plugin_Page extends CWP_Data {
 	public $coming_soon = false;
 
 	/**
+	 * Is free plugin?
+	 *
+	 * @var bool
+	 */
+	public $free;
+
+	/**
 
 	/**
 	 * Constructor for class
@@ -43,11 +42,20 @@ class CWP_Plugin_Page extends CWP_Data {
 	public function __construct( $post) {
 		$this->post = $post;
 		$this->pod = $this->pod();
+
+		if ( 'free_plugin' == $this->post->post_type ) {
+			$this->free = true;
+
+		}else{
+			$this->free = false;
+			$this->pricing = $this->pricing();
+		}
+
 		$this->logo = wp_get_attachment_image( cwp_theme_cwp_logo_id() );
 		$this->header_atts = $this->header_atts();
 
 
-		$this->pricing = $this->pricing();
+
 		$this->menu_name = 'product_page_menu';
 		$this->contact_form_id = 'CF54d702af07cef';
 
@@ -71,9 +79,17 @@ class CWP_Plugin_Page extends CWP_Data {
 			'tagline' => 'product_tagline',
 			'header_bg' => 'header_image',
 			'title' => 'post_title',
-
-
 		);
+
+		if ( $this->free ) {
+			unset( $fields[ 'header_bg' ] );
+			$header_bg = wp_get_attachment_image_src( (int) get_post_thumbnail_id( $this->post->ID ), 'large' );
+			if ( 1 > $header_bg ) {
+				$header_bg = wp_get_attachment_image_src( cwp_theme_cwp_logo_id() );
+			}
+			$atts['header_bg'] = $header_bg[0];
+		}
+
 		foreach ( $fields as $key => $field ) {
 			$atts[ $key ] = $this->pod()->display( $field );
 		}
@@ -82,6 +98,7 @@ class CWP_Plugin_Page extends CWP_Data {
 		$atts[ 'logo' ] = $this->logo;
 
 		return $atts;
+
 	}
 
 	/**
@@ -93,13 +110,17 @@ class CWP_Plugin_Page extends CWP_Data {
 		$key = md5( __CLASS__ . $this->post->ID );
 		if ( false == ( $page = wp_cache_get( $key ) )  ) {
 			$page[] = $this->post_content();
-			if ( ! $this->coming_soon && ! $this->cf ) {
+			if ( ! $this->coming_soon || ! $this->cf || false === $this->free ) {
+
+			}else{
 				$page[] = $this->feature_section();
 			}
+
 			$page[] = $this->testimonials_section();
-			if ( 'download' == $this->post->post_type ) {
+			if ( false === $this->free ) {
 				$page[] = $this->price_table();
 			}
+
 			$page[] = $this->contact_section();
 			if ( ! $this->coming_soon ) {
 				$page[] = $this->docs();
@@ -109,7 +130,7 @@ class CWP_Plugin_Page extends CWP_Data {
 		}
 
 		return $page;
-		
+
 	}
 
 	/**
@@ -331,7 +352,9 @@ class CWP_Plugin_Page extends CWP_Data {
 		if ( $this->cf ) {
 			$docs = $this->pod->template( 'After Download' );
 
-		}else{
+		}elseif( 474 === $this->post->ID || 'caldera-forms' == $this->post->post_name ){
+			$docs = __( sprintf( '<h5><a href="#" title="Caldera Forms Docs Site" target="_blank">Docs For Caldera Forms Are Available at docs.CadleraForms.com</a></h5>', 'http://docs.cadleraforms.com' ), 'cwp-theme'  );
+		} else{
 			$docs = cep_render_easy_pod( 'auto_docs_list' );
 		}
 		return sprintf(
