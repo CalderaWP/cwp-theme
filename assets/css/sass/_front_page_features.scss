@@ -68,7 +68,7 @@
       margin: 0 25%;
     }
     h5{
-      font-size: 2em;
+      @include product_preview_h5_font_size;
     }
 
   }

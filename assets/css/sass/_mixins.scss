@@ -48,3 +48,7 @@
 @mixin cf_required() {
   color: $white !important;
 }
+
+@mixin product_preview_h5_font_size {
+  font-size: 2em;
+}

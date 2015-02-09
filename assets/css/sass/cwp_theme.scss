@@ -16,7 +16,7 @@
 @import "underscores/modules/accessibility";
 @import "underscores/modules/alignments";
 @import "block_grid";
-@import "product-preview";
+
 @import "related-products";
 @import "genericons/genericons";
 @import "about_box";
@@ -26,8 +26,10 @@
 @import "social";
 @import "footer";
 @import "menu";
-@import "front_page_features";
+
 @import "post";
+@import "front_page_features";
+@import "product-preview";
 
 
 body {

@@ -368,17 +368,6 @@ a {
     display: inline;
     margin: 0 1%; }
 
-.product-preview {
-  border: 1px solid #f7f1f9;
-  overflow: hidden; }
-  .product-preview img {
-    width: 100%; }
-  .product-preview h5 {
-    text-align: center;
-    margin-bottom: 1em; }
-  .product-preview .product-tagline {
-    padding: 8px 8px 16px; }
-
 .related-products h5 {
   margin-bottom: .7em; }
 .related-products span {
@@ -1103,6 +1092,30 @@ ul#footer-menu li {
 .blog-menu ul > li:last-child a {
   border-bottom-width: 0; }
 
+.single-post .post-content {
+  display: block;
+  overflow: auto; }
+.single-post h2.post-title {
+  color: #aa60be;
+  text-shadow: none;
+  margin: 48px 0 24px; }
+.single-post .product-preview {
+  background-color: #f6f9f0; }
+  .single-post .product-preview .product-tagline {
+    text-align: center;
+    font-size: 1.5em; }
+  .single-post .product-preview img {
+    width: 50%;
+    display: inline-block;
+    text-align: center;
+    margin: 0 25%; }
+.single-post ul#menu-plugins li a {
+  color: #aa60be; }
+  .single-post ul#menu-plugins li a:hover {
+    color: #a3be60; }
+.single-post .add-on-search-result.product-preview h5 a {
+  font-size: 2em; }
+
 .content.front-page-content {
   background: none;
   border: none;
@@ -1192,29 +1205,33 @@ ul#footer-menu li {
       .front-page-feature a:hover {
         color: #181f3a; } }
 
-.single-post .post-content {
+.product-preview {
+  border: 1px solid #f7f1f9;
+  overflow: hidden; }
+  .product-preview img {
+    width: 100%; }
+  .product-preview h5 {
+    text-align: center;
+    margin-bottom: 1em;
+    font-size: 2em; }
+  .product-preview .product-tagline {
+    padding: 8px 8px 16px; }
+
+.product-preview.product-grid {
+  height: 405px;
+  overflow: hidden;
+  background-color: #f7f1f9;
+  border: 1px solid #f6f9f0; }
+
+span#CEP54b718b640d5e838-pagination, span#CEP54d2daa58039b548-pagination {
   display: block;
-  overflow: auto; }
-.single-post h2.post-title {
-  color: #aa60be;
-  text-shadow: none;
-  margin: 48px 0 24px; }
-.single-post .product-preview {
-  background-color: #f6f9f0; }
-  .single-post .product-preview .product-tagline {
-    text-align: center;
-    font-size: 1.5em; }
-  .single-post .product-preview img {
-    width: 50%;
-    display: inline-block;
-    text-align: center;
-    margin: 0 25%; }
-.single-post ul#menu-plugins li a {
-  color: #aa60be; }
-  .single-post ul#menu-plugins li a:hover {
-    color: #a3be60; }
-.single-post .add-on-search-result.product-preview h5 a {
-  font-size: 2em; }
+  background: white;
+  padding-left: 12px; }
+
+.page-id-377 h3 {
+  text-align: center;
+  font-size: 3em;
+  color: #7d923b; }
 
 body {
   background-color: #fcfdf7;

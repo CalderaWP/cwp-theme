@@ -9,12 +9,31 @@
   h5 {
     text-align: center;
     margin-bottom: 1em;
+    @include product_preview_h5_font_size;
   }
 
   .product-tagline {
     padding:8px 8px 16px;
   }
-  
 
+}
 
+.product-preview.product-grid {
+  height: 405px;
+  overflow: hidden;
+  background-color: $secondary1Tint2;
+  border: 1px solid $white;
+
+}
+
+span#CEP54b718b640d5e838-pagination, span#CEP54d2daa58039b548-pagination {
+  display: block;
+  background: white;
+  padding-left: 12px;
+}
+
+.page-id-377 h3 {
+  text-align: center;
+  font-size: 3em;
+  color: $dark_green;
 }
