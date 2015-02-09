@@ -93,7 +93,7 @@ class CWP_Plugin_Page extends CWP_Data {
 		$key = md5( __CLASS__ . $this->post->ID );
 		if ( false == ( $page = wp_cache_get( $key ) )  ) {
 			$page[] = $this->post_content();
-			if ( ! $this->coming_soon ) {
+			if ( ! $this->coming_soon && ! $this->cf ) {
 				$page[] = $this->feature_section();
 			}
 			$page[] = $this->testimonials_section();
@@ -102,13 +102,14 @@ class CWP_Plugin_Page extends CWP_Data {
 			}
 			$page[] = $this->contact_section();
 			if ( ! $this->coming_soon ) {
-				$out[] = $this->docs();
+				$page[] = $this->docs();
 			}
 			$page = implode( '', $page );
 			wp_cache_set( $key, $page, '', 399 );
 		}
 
 		return $page;
+		
 	}
 
 	/**
