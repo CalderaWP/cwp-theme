@@ -520,15 +520,37 @@ section#contact  {
   .contact-form label {
     @include cf_label;
   }
-
-
-
+  
   .caldera-grid .btn-default {
     @include cf_submit;
   }
 
   span.field_required {
     @include cf_required;
+  }
+
+  .product-page-mailing-list-opt-in {
+    label.checkbox-inline {
+      background: none !important;
+      padding: 0;
+      margin-left: 20px;
+    }
+
+    input#fld_3961069_1_opt1939439 {
+      padding: 4px;
+      width: 8px;
+    }
+
+    input#fld_3961069_1_opt1939439 {
+      width: 100px;
+    }
+
+    input#fld_3961069_1_opt1939439 {
+      padding: 0  !important;
+      display: block;
+      width: 12px !important;
+      height: 12px !important;
+    }
   }
 
 }

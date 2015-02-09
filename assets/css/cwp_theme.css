@@ -1640,6 +1640,20 @@ section#contact {
       background-color: #f6f9f0; }
   section#contact span.field_required {
     color: #f6f9f0 !important; }
+  section#contact .product-page-mailing-list-opt-in label.checkbox-inline {
+    background: none !important;
+    padding: 0;
+    margin-left: 20px; }
+  section#contact .product-page-mailing-list-opt-in input#fld_3961069_1_opt1939439 {
+    padding: 4px;
+    width: 8px; }
+  section#contact .product-page-mailing-list-opt-in input#fld_3961069_1_opt1939439 {
+    width: 100px; }
+  section#contact .product-page-mailing-list-opt-in input#fld_3961069_1_opt1939439 {
+    padding: 0  !important;
+    display: block;
+    width: 12px !important;
+    height: 12px !important; }
 
 @media (min-width: 768px) {
   .logo {
