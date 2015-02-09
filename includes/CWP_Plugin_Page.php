@@ -110,7 +110,7 @@ class CWP_Plugin_Page extends CWP_Data {
 		$key = md5( __CLASS__ . $this->post->ID );
 		if ( false == ( $page = wp_cache_get( $key ) )  ) {
 			$page[] = $this->post_content();
-			if ( ! $this->coming_soon || ! $this->cf || false === $this->free ) {
+			if ( $this->coming_soon || ! $this->cf || true === $this->free ) {
 
 			}else{
 				$page[] = $this->feature_section();
