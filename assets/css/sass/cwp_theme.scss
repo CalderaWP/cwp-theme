@@ -489,26 +489,11 @@ section#contact  {
   }
 
   .contact-form input {
-    width:100%;
-    padding:15px;
-    border:none;
-    border-radius:2px;
-    font-size:16px;
-    color:#ccc;
-    margin-bottom:25px;
-    background:$white;
+    @include cf_input;
   }
 
   .contact-form textarea {
-    width:100%;
-    padding:15px;
-    border:none;
-    border-radius:2px;
-    font-size:16px;
-    color:#ccc;
-    margin-bottom:20px;
-    background:$white;
-
+    @include cf_textarea;
   }
 
   .container {
@@ -531,26 +516,17 @@ section#contact  {
   }
 
   .contact-form label {
-    background: $dark_green;
-    padding-left: 1px;
+    @include cf_label;
   }
 
 
 
   .caldera-grid .btn-default {
-    background-image: none;
-    background-color: $dark_green;
-    color: $white;
-    text-shadow: none;
-    border: none;
-    &:hover {
-      color: $dark_green;
-      background-color: $white;
-    }
+    @include cf_submit;
   }
 
   span.field_required {
-    color: $white !important;
+    @include cf_required;
   }
 
 }

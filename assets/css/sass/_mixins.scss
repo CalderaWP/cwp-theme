@@ -3,3 +3,48 @@
   border: 1px solid $primary;
   padding: $margin;
 }
+
+@mixin cf_input() {
+  width:100%;
+  padding:15px;
+  border:none;
+  border-radius:2px;
+  font-size:16px;
+  color:$primaryTint1;
+  margin-bottom:25px;
+  background:$white;
+}
+
+@mixin cf_textarea() {
+  width:100%;
+  padding:15px;
+  border:none;
+  border-radius:2px;
+  font-size:16px;
+  color:$primaryTint1;
+  margin-bottom:20px;
+  background:$white;
+
+}
+
+@mixin cf_label() {
+  background: $dark_green;
+  padding-left: 1px;
+}
+
+@mixin cf_submit() {
+  background-image: none;
+  background-color: $dark_green;
+  color: $white;
+  text-shadow: none;
+  border: none;
+  &:hover {
+    color: $dark_green;
+    background-color: $white;
+  }
+
+}
+
+@mixin cf_required() {
+  color: $white !important;
+}

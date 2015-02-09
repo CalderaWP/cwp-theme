@@ -1571,7 +1571,7 @@ section#contact {
     border: none;
     border-radius: 2px;
     font-size: 16px;
-    color: #ccc;
+    color: #cde495;
     margin-bottom: 25px;
     background: #f6f9f0; }
   section#contact .contact-form textarea {
@@ -1580,7 +1580,7 @@ section#contact {
     border: none;
     border-radius: 2px;
     font-size: 16px;
-    color: #ccc;
+    color: #cde495;
     margin-bottom: 20px;
     background: #f6f9f0; }
   section#contact .container {
