@@ -1251,7 +1251,7 @@ h1, h2, h3, h4, h5, h6 {
       text-transform: uppercase;
       font-weight: 900; }
       .nav li a:hover {
-        color: #aa60be; }
+        color: #a3be60; }
 
 /*----- Header Slider----*/
 .banner {
@@ -1638,7 +1638,7 @@ section#contact {
       text-transform: uppercase;
       font-weight: 900; }
       .nav a:hover {
-        color: #7d923b; } }
+        color: #a3be60; } }
 @media (min-width: 320px) and (max-width: 767px) {
   .logo {
     text-align: center; }
@@ -1672,7 +1672,7 @@ section#contact {
     font-weight: 900; }
 
   .nav a:hover {
-    color: #ff9f74; }
+    color: #a3be60; }
 
   /*Banner content*/
   .banner .carousel-indicators {
