@@ -277,7 +277,7 @@ class CWP_Data {
 		// content
 		$content = apply_filters( 'the_content', $this->post->post_content );
 
-		$out[] = '<section class="container csingle-post"><div class="container"><div class="post-content col-lg-12 col-sm-12">';
+		$out[] = '<section class="container single-post"><div class="container"><div class="post-content col-lg-12 col-sm-12">';
 		$out[] = $content;//wptexturize( wpautop( do_shortcode(  ) ) );
 		$out[] = '</div></div></section>';
 
