@@ -1663,8 +1663,11 @@ section#contact {
     padding-top: 12px; }
     section#contact .contact-form .form-group > label .field_required {
       color: #F6F9F0 !important; }
-  section#contact .contact-form .checkbox > label {
-    color: #3a3a3c; }
+  section#contact .contact-form .checkbox {
+    background: #3a3a3c;
+    border-radius: 3px;
+    margin: 0;
+    padding: 11px; }
   section#contact .caldera-grid .footer-button {
     background-image: none;
     background-color: #7D923B;

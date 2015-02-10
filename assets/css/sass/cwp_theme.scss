@@ -530,8 +530,11 @@ section#contact  {
     }
 
   }
-  .contact-form .checkbox > label {
-    color: $caldera_black;
+  .contact-form .checkbox {
+    background: $caldera_black;
+    border-radius: 3px;
+    margin: 0;
+    padding: 11px;
   }
 
   .caldera-grid .footer-button {
