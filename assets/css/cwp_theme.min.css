@@ -1632,6 +1632,15 @@ section#contact {
     margin-right: 15px; }
   section#contact .contact-form {
     padding: 0 0 70px 0; }
+  section#contact .contact-form input {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 2px;
+    font-size: 16px;
+    color: #CDE495;
+    margin-bottom: 25px;
+    background: #F6F9F0; }
   section#contact .container {
     padding: 0; }
     section#contact .container div#cwp-social-links {
