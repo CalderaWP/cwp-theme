@@ -59,12 +59,7 @@ class CWP_Plugin_Page extends CWP_Data {
 		$this->menu_name = 'product_page_menu';
 		$this->contact_form_id = 'CF54d702af07cef';
 
-		$cf = $this->pod->field( 'cf_add_on');
-		if ( $this->pod->feild( 'cf_add_on') ) {
-			$this->cf = true;
-		}else{
-			$this->cf = false;
-		}
+		$this->cf = $this->pod->field( 'cf_add_on');
 
 		if ( get_post_meta( $this->post->ID, 'edd_coming_soon', true  ) ) {
 			$this->coming_soon = true;
