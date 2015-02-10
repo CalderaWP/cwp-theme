@@ -520,6 +520,7 @@ section#contact  {
     background-color: $primary;
     border-radius: 8px 8px 0 0;
     padding: 18px;
+    box-shadow: 0px 5px 0 4px rgba(0,0,0,0.2);
   }
 
   .contact-form .form-group > label {
@@ -537,6 +538,9 @@ section#contact  {
     padding: 11px;
     > label {
       color: $white !important;
+    }
+    input {
+      margin-right: 12px !important;
     }
   }
 
