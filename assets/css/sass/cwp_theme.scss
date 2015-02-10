@@ -492,11 +492,11 @@ section#contact  {
   }
 
   .contact-form input {
-    @include cf_input;
+    //@include cf_input;
   }
 
   .contact-form textarea {
-    @include cf_textarea;
+   // @include cf_textarea;
   }
 
   .container {
