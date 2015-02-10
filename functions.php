@@ -289,7 +289,11 @@ add_filter( 'upload_size_limit', function( $limit ) {
  */
 add_filter( 'the_content', function( $content )  {
    if ( ! is_user_logged_in() && CWP_Theme_EDD::is_checkout() ) {
-      $content = Caldera_Forms::render_form( 'CF54cdab1e3d906' );
+      $id = 'CF54cdab1e3d906';
+      if ( strpos( home_url(), 'calderawp.com' ) ) {
+         $id ='CF54d9c8f7324f1';
+      }
+      $content = Caldera_Forms::render_form( $id );
    }
 
    return $content;
