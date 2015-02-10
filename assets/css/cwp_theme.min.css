@@ -1653,13 +1653,18 @@ section#contact {
           text-decoration: none; }
   section#contact #contact-inner {
     padding-top: 0px; }
+  section#contact .CF54d702af07cef {
+    background-color: #A3BE60;
+    border-radius: 8px 8px 0 0;
+    padding: 18px; }
   section#contact .contact-form .form-group > label {
-    color: #A3BE60;
-    padding-left: 1px; }
+    color: #3a3a3c;
+    padding-left: 1px;
+    padding-top: 12px; }
     section#contact .contact-form .form-group > label .field_required {
       color: #F6F9F0 !important; }
   section#contact .contact-form .checkbox > label {
-    color: #A3BE60; }
+    color: #3a3a3c; }
   section#contact .caldera-grid .footer-button {
     background-image: none;
     background-color: #7D923B;
