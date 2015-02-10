@@ -356,7 +356,7 @@ class CWP_Plugin_Page extends CWP_Data {
 			$docs = $this->pod->template( 'After Download' );
 
 		}elseif( 474 === $this->post->ID || 'caldera-forms' == $this->post->post_name ){
-			$docs = __( sprintf( '<h5><a href="#" title="Caldera Forms Docs Site" target="_blank">Docs For Caldera Forms Are Available at docs.CadleraForms.com</a></h5>', 'http://docs.cadleraforms.com' ), 'cwp-theme'  );
+			$docs = __( sprintf( '<h5><a href="#" title="Caldera Forms Docs Site" target="_blank">Docs For Caldera Forms Are Available at docs.CalderaForms.com</a></h5>', 'http://docs.cadleraforms.com' ), 'cwp-theme'  );
 		} else{
 			$docs = cep_render_easy_pod( 'auto_docs_list' );
 		}
