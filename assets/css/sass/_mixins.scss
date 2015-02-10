@@ -5,14 +5,11 @@
 }
 
 @mixin cf_input() {
-  width:100%;
-  padding:15px;
-  border:none;
-  border-radius:2px;
-  font-size:16px;
-  color:$primaryTint1;
-  margin-bottom:25px;
-  background:$white;
+  border: medium none;
+  border-radius: 2px;
+  font-size: 14px;
+  margin-bottom: 25px;
+  width: 100%;
 }
 
 @mixin cf_textarea() {

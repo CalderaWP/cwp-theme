@@ -1633,14 +1633,11 @@ section#contact {
   section#contact .contact-form {
     padding: 0 0 70px 0; }
   section#contact .contact-form input {
-    width: 100%;
-    padding: 15px;
-    border: none;
+    border: medium none;
     border-radius: 2px;
-    font-size: 16px;
-    color: #CDE495;
+    font-size: 14px;
     margin-bottom: 25px;
-    background: #F6F9F0; }
+    width: 100%; }
   section#contact .container {
     padding: 0; }
     section#contact .container div#cwp-social-links {
@@ -1658,6 +1655,15 @@ section#contact {
     padding-left: 1px; }
   section#contact .contact-form .checkbox > label {
     color: #A3BE60; }
+  section#contact .caldera-grid .footer-button {
+    background-image: none;
+    background-color: #7D923B;
+    color: #F6F9F0;
+    text-shadow: none;
+    border: none; }
+    section#contact .caldera-grid .footer-button:hover {
+      color: #7D923B;
+      background-color: #F6F9F0; }
 
 @media (min-width: 768px) {
   .logo {

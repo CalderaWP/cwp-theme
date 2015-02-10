@@ -525,8 +525,8 @@ section#contact  {
     color: $primary;
   }
 
-  .caldera-grid .btn-default {
-    //@include cf_submit;
+  .caldera-grid .footer-button {
+    @include cf_submit;
   }
 
   span.field_required {
