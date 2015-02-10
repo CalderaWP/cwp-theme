@@ -361,7 +361,7 @@ add_filter( 'template_include', function ( $template ) {
    if ( cwp_theme_is_plugin_page() ) {
       $new_template = locate_template( array( 'plugins-page.php' ) );
 
-   }elseif ( is_page() || is_front_page()  ) {
+   }elseif ( is_front_page()  ) {
       $new_template = locate_template( array( 'single.php' ) );
    }
 
