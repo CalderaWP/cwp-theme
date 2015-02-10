@@ -52,3 +52,16 @@
 @mixin product_preview_h5_font_size {
   font-size: 2em;
 }
+
+@mixin sell_button() {
+  padding: 15px 30px; background: #424A56; color: #FFF !important; text-decoration: none; transition: ease-in-out; transition-duration: .3s;
+  margin: 24px 0;
+  font-size: 2em;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  &:hover {
+    background-color: $secondary1;
+
+  }
+}

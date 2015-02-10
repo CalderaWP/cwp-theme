@@ -430,18 +430,18 @@ input.button {
         font-size: 20px;
         text-align: center;
         padding-bottom: 40px;
-        .signup-btn a {
-          padding: 15px 30px;
-          background: #424a56;
-          color: $white !important;
-          text-decoration: none;
-          transition: ease-in-out;
-          transition-duration: .3s;
-          &:hover {
-            background: $secondary2Shade2;
+        a {
+            padding: 15px 30px;
+            background: #424a56;
             color: $white !important;
             text-decoration: none;
-          }
+            transition: ease-in-out;
+            transition-duration: .3s;
+            &:hover {
+              background: $secondary2Shade2;
+              color: $white !important;
+              text-decoration: none;
+            }
         }
 
       }
@@ -810,16 +810,15 @@ section#contact  {
 }
 
 .edd-submit.button.blue {
-  padding: 15px 30px; background: #424A56; color: #FFF !important; text-decoration: none; transition: ease-in-out; transition-duration: .3s;
-  margin: 24px 0;
-  font-size: 2em;
-  display: inline-block;
-  text-align: center;
-  &:hover {
-    background-color: $secondary1;
-
-  }
+  @include sell_button;
 }
+
+
+.purchase-button a, .purchase-button {
+  @include sell_button;
+  margin: 24px 25%;
+}
+
 
 
 .edd_purchase_submit_wrapper a.edd-add-to-cart.edd-has-js {

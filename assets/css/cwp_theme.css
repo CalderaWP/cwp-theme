@@ -1568,14 +1568,14 @@ input.button {
       font-size: 20px;
       text-align: center;
       padding-bottom: 40px; }
-      #pricing .pricing-box .price .featcontent .signup-btn .signup-btn a {
+      #pricing .pricing-box .price .featcontent .signup-btn a {
         padding: 15px 30px;
         background: #424a56;
         color: #f6f9f0 !important;
         text-decoration: none;
         transition: ease-in-out;
         transition-duration: .3s; }
-        #pricing .pricing-box .price .featcontent .signup-btn .signup-btn a:hover {
+        #pricing .pricing-box .price .featcontent .signup-btn a:hover {
           background: #181f3a;
           color: #f6f9f0 !important;
           text-decoration: none; }
@@ -1833,8 +1833,25 @@ section#contact {
   margin: 24px 0;
   font-size: 2em;
   display: inline-block;
-  text-align: center; }
+  text-align: center;
+  text-decoration: none; }
   .edd-submit.button.blue:hover {
+    background-color: #aa60be; }
+
+.purchase-button a, .purchase-button {
+  padding: 15px 30px;
+  background: #424A56;
+  color: #FFF !important;
+  text-decoration: none;
+  transition: ease-in-out;
+  transition-duration: .3s;
+  margin: 24px 0;
+  font-size: 2em;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  margin: 24px 25%; }
+  .purchase-button a:hover, .purchase-button:hover {
     background-color: #aa60be; }
 
 .edd_purchase_submit_wrapper a.edd-add-to-cart.edd-has-js {

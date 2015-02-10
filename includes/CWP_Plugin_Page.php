@@ -253,14 +253,20 @@ class CWP_Plugin_Page extends CWP_Data {
 			'text'        => __( 'Choose', 'cwp-theme' ),
 		);
 
+
 		foreach( $prices as $i => $price ) {
 
 
-			$args[ 'price_id' ] = $i;
+			$args[ 'price_id' ] = (string) $i;
 
-			$link = edd_get_purchase_link( $args  );
+			//$link = edd_get_purchase_link( $args  );
+			$link = add_query_arg( array(
+				'edd_action' => 'add_to_cart',
+				'download_id' => $this->post->ID,
+				'edd_options[price_id]' => (string) $i,
+			), home_url( 'checkout' ) );
 
-
+			$link = sprintf( '<a href="%1s" class="purchase-button">Choose</a>', $link);
 			$link = sprintf( '<div id="purchase-%1s">%2s</div>', $i, $link );
 
 			$prices[ $i ][ 'link' ] = $link;
@@ -271,7 +277,6 @@ class CWP_Plugin_Page extends CWP_Data {
 		$prices[ 1 ][ 'level' ] = __( 'Personal', 'cwp-theme' );
 		$prices[ 2 ][ 'level' ] = __( 'Business', 'cwp-theme' );
 		$prices[ 3 ][ 'level' ] = __( 'Developer', 'cwp-theme' );
-
 
 		return $prices;
 	}
