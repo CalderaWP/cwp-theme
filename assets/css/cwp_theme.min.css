@@ -1632,7 +1632,8 @@ section#contact {
     margin-right: 15px; }
   section#contact .contact-form {
     padding: 0 0 70px 0; }
-  section#contact .contact-form input {
+  section#contact .contact-form input[type="text"],
+  section#contact .contact-form input[type="email"] {
     border: medium none;
     border-radius: 2px;
     font-size: 14px;
