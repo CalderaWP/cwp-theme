@@ -28,7 +28,7 @@
         float: left;
       }
       span {
-        color: $white;
+        color: $caldera_grey;
         float: right;
       }
       a, span {
@@ -38,12 +38,21 @@
 
     }
     @media (max-width: 600px) {
-      h3, h3 span {
+      h3 {
         display: block;
-      }
-      h3 span {
-        text-align: right;
-        margin-top: 10px;
+        a {
+          display: block;
+          float: none;
+        }
+        span {
+          display: block;
+          float: none;
+        }
+        a, span {
+          margin: 0px;
+          line-height: 2em;
+        }
+
       }
     }
 

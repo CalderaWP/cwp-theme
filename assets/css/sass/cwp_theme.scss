@@ -818,6 +818,16 @@ section#contact  {
     height: 75px;
   }
 }
+@media (max-width: 600px) {
+  .header-cover {
+
+    .logo img {
+
+      width: 25px;
+      height: 25px;
+    }
+  }
+}
 
 
 
@@ -858,6 +868,15 @@ section#contact  {
     color: $dark_green;
   }
 
+}
+
+@media (max-width: 600px) {
+  #product-description {
+    h2 {
+      font-size: 2.25em;
+
+    }
+  }
 }
 
 section#footer {
