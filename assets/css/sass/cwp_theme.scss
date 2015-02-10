@@ -388,6 +388,11 @@ input.button {
       font-weight: bold;
 
     }
+    .package {
+      font-size: 30px;
+      font-weight: bold;
+
+    }
     .divider {
       height: 2px;
       background: rgba(255, 255, 255, .3);
@@ -405,9 +410,14 @@ input.button {
       padding-top: 10px;
     }
     .featcontent {
-      background: $caldera_grey;
+      background: $gray;
+      border-radius: 0 0 10px 10px;
+      text-align: center;
     }
     .featcontent {
+      background: $gray;
+      border-radius: 0 0 10px 10px;
+      text-align: center;
       .feat-list {
         font-size: 20px;
         font-weight: 300;
@@ -928,4 +938,10 @@ section#footer {
 
 p {
   font-size: 1.5em;
+}
+
+.featcontent {
+  background: $caldera_grey;
+  border-radius: 0 0 10px 10px;
+  text-align: center;
 }

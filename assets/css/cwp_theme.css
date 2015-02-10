@@ -1550,6 +1550,9 @@ input.button {
     #pricing .pricing-box .price .package {
       font-size: 30px;
       font-weight: bold; }
+    #pricing .pricing-box .price .package {
+      font-size: 30px;
+      font-weight: bold; }
     #pricing .pricing-box .price .divider {
       height: 2px;
       background: rgba(255, 255, 255, 0.3);
@@ -1564,37 +1567,43 @@ input.button {
       font-weight: 300;
       padding-top: 10px; }
     #pricing .pricing-box .price .featcontent {
-      background: #e7e8e9; }
-    #pricing .pricing-box .price .featcontent .feat-list {
-      font-size: 20px;
-      font-weight: 300;
-      color: #656667; }
-      #pricing .pricing-box .price .featcontent .feat-list ul {
-        list-style: none;
-        margin: 0px;
-        padding: 0px;
-        margin-bottom: 30px; }
-      #pricing .pricing-box .price .featcontent .feat-list li {
-        line-height: 50px;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-        padding: 0 30px; }
-        #pricing .pricing-box .price .featcontent .feat-list li:last-child {
-          border-bottom: none; }
-    #pricing .pricing-box .price .featcontent .signup-btn {
-      font-size: 20px;
-      text-align: center;
-      padding-bottom: 40px; }
-      #pricing .pricing-box .price .featcontent .signup-btn a {
-        padding: 15px 30px;
-        background: #424a56;
-        color: #f6f9f0 !important;
-        text-decoration: none;
-        transition: ease-in-out;
-        transition-duration: .3s; }
-        #pricing .pricing-box .price .featcontent .signup-btn a:hover {
-          background: #9fbf5e;
+      background: #8f8f8f;
+      border-radius: 0 0 10px 10px;
+      text-align: center; }
+    #pricing .pricing-box .price .featcontent {
+      background: #8f8f8f;
+      border-radius: 0 0 10px 10px;
+      text-align: center; }
+      #pricing .pricing-box .price .featcontent .feat-list {
+        font-size: 20px;
+        font-weight: 300;
+        color: #656667; }
+        #pricing .pricing-box .price .featcontent .feat-list ul {
+          list-style: none;
+          margin: 0px;
+          padding: 0px;
+          margin-bottom: 30px; }
+        #pricing .pricing-box .price .featcontent .feat-list li {
+          line-height: 50px;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+          padding: 0 30px; }
+          #pricing .pricing-box .price .featcontent .feat-list li:last-child {
+            border-bottom: none; }
+      #pricing .pricing-box .price .featcontent .signup-btn {
+        font-size: 20px;
+        text-align: center;
+        padding-bottom: 40px; }
+        #pricing .pricing-box .price .featcontent .signup-btn a {
+          padding: 15px 30px;
+          background: #424a56;
           color: #f6f9f0 !important;
-          text-decoration: none; }
+          text-decoration: none;
+          transition: ease-in-out;
+          transition-duration: .3s; }
+          #pricing .pricing-box .price .featcontent .signup-btn a:hover {
+            background: #9fbf5e;
+            color: #f6f9f0 !important;
+            text-decoration: none; }
 
 /*---- Contact Section ---*/
 section#contact {
@@ -1935,3 +1944,8 @@ section#footer {
 
 p {
   font-size: 1.5em; }
+
+.featcontent {
+  background: #e7e8e9;
+  border-radius: 0 0 10px 10px;
+  text-align: center; }
