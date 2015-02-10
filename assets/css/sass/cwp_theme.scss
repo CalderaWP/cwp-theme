@@ -518,6 +518,11 @@ section#contact  {
 
   .contact-form .form-group > label {
     @include cf_label;
+    
+    .field_required{
+      color: $white !important;
+    }
+
   }
   .contact-form .checkbox > label {
     color: $primary;

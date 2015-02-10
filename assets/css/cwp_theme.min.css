@@ -1129,7 +1129,8 @@ ul#footer-menu li {
   background-color: #7D923B;
   color: #F6F9F0;
   text-shadow: none;
-  border: none; }
+  border: none;
+  padding: 12px; }
   .single-post .caldera-grid .btn-default:hover {
     color: #7D923B;
     background-color: #F6F9F0; }
@@ -1655,6 +1656,8 @@ section#contact {
   section#contact .contact-form .form-group > label {
     color: #A3BE60;
     padding-left: 1px; }
+    section#contact .contact-form .form-group > label .field_required {
+      color: #F6F9F0 !important; }
   section#contact .contact-form .checkbox > label {
     color: #A3BE60; }
   section#contact .caldera-grid .footer-button {
@@ -1662,7 +1665,8 @@ section#contact {
     background-color: #7D923B;
     color: #F6F9F0;
     text-shadow: none;
-    border: none; }
+    border: none;
+    padding: 12px; }
     section#contact .caldera-grid .footer-button:hover {
       color: #7D923B;
       background-color: #F6F9F0; }
