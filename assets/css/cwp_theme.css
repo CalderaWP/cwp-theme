@@ -1136,6 +1136,10 @@ ul#footer-menu li {
   .single-post .caldera-grid .btn-default:hover {
     color: #f6f9f0;
     background-color: #a3be60; }
+.single-post .nav li a {
+  color: #a3be60; }
+  .single-post .nav li a:hover {
+    color: #7d923b; }
 
 .content.front-page-content {
   background: none;

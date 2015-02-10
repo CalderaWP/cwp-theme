@@ -46,5 +46,10 @@
        }
     }
   }
+
+  .nav li a {
+    color: $cwp_green;
+    &:hover { color: $dark_green;}
+  }
 }
 
