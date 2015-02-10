@@ -491,13 +491,10 @@ section#contact  {
     padding:0 0 70px 0 ;
   }
 
+  .contact-form textarea,
   .contact-form input[type="text"],
   .contact-form input[type="email"] {
     @include cf_input;
-  }
-
-  .contact-form textarea {
-   // @include cf_textarea;
   }
 
   .container {
