@@ -519,7 +519,7 @@ section#contact  {
   }
 
   .contact-form label {
-    //@include cf_label;
+    @include cf_label;
   }
 
   .caldera-grid .btn-default {

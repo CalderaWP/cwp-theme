@@ -1644,6 +1644,9 @@ section#contact {
           text-decoration: none; }
   section#contact #contact-inner {
     padding-top: 0px; }
+  section#contact .contact-form label {
+    color: #A3BE60;
+    padding-left: 1px; }
 
 @media (min-width: 768px) {
   .logo {
