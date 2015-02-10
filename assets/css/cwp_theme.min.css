@@ -1148,14 +1148,18 @@ ul#footer-menu li {
   padding: 0; }
 
 .front-page-feature {
+  border: 1px solid #e1e1e1;
+  box-shadow: 0 5px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 9px;
   background-color: #F6F9F0;
+  overflow: hidden;
   margin-bottom: 24px;
   background-position-y: 0;
   background-repeat: no-repeat; }
   .front-page-feature a {
     color: #597516; }
   .front-page-feature .title-wrap {
-    background-color: #0A7A6F;
+    background-color: #A3BE60;
     width: 100%;
     display: inline-block;
     padding: 12px 12px 32px;
@@ -1181,8 +1185,8 @@ ul#footer-menu li {
     padding: 12px;
     font-size: 1.25em; }
   .front-page-feature .front-page-feature-content {
-    background-color: rgba(231, 245, 196, 0.5);
-    text-align: left; }
+    text-align: left;
+    padding: 12px; }
   .front-page-feature .product-preview {
     background-color: #F6F9F0; }
     .front-page-feature .product-preview .product-tagline {
