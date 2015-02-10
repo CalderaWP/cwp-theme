@@ -1647,6 +1647,8 @@ section#contact {
   section#contact .contact-form .form-group > label {
     color: #A3BE60;
     padding-left: 1px; }
+  section#contact .contact-form .checkbox > label {
+    color: #A3BE60; }
 
 @media (min-width: 768px) {
   .logo {
