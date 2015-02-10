@@ -601,7 +601,6 @@ section#contact  {
     font-size:14px;
     color:$white;
     text-align:center;
-    margin-top:10px;
     ul {
       padding:0px;
       margin:0px;
@@ -620,6 +619,8 @@ section#contact  {
       text-decoration:none;
       text-transform:uppercase;
       font-weight:900;
+      padding: 39px 3px;
+      display: inline-block;
       &:hover {
         color: $primary;
       }
@@ -818,6 +819,7 @@ section#contact  {
   .logo img {
     width: 75px;
     height: 75px;
+    margin: 12px 0;
   }
 }
 

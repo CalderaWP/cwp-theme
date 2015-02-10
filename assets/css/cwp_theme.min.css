@@ -1705,8 +1705,7 @@ section#contact {
   .nav {
     font-size: 14px;
     color: #F6F9F0;
-    text-align: center;
-    margin-top: 10px; }
+    text-align: center; }
     .nav ul {
       padding: 0px;
       margin: 0px;
@@ -1721,7 +1720,9 @@ section#contact {
       color: #F6F9F0;
       text-decoration: none;
       text-transform: uppercase;
-      font-weight: 900; }
+      font-weight: 900;
+      padding: 39px 3px;
+      display: inline-block; }
       .nav a:hover {
         color: #A3BE60; } }
 @media (min-width: 320px) and (max-width: 767px) {
@@ -1843,7 +1844,8 @@ section#contact {
   height: 500px; }
   .header-cover .logo img {
     width: 75px;
-    height: 75px; }
+    height: 75px;
+    margin: 12px 0; }
 
 #price-1 {
   background-color: #0A7A6F; }
