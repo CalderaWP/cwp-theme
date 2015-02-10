@@ -224,14 +224,13 @@ class CWP_Data {
 		$menu_items = wp_get_nav_menu_items($menu_name);
 
 		$menu_list = '<ul id="menu-' . $menu_name . '" class="navi">';
-
+		
 		foreach ( (array) $menu_items as $key => $item ) {
 			if ( $item->attr_title ) {
 				$title = $item->attr_title;
 			}else{
 				$title = $item->title;
 			}
-			var_dump( $item );
 			$url = $item->url;
 			$menu_list .= '<li><a href="' . esc_url( $url ) . '" title="' . esc_attr( $item->post_excerpt ) .'">' . $title . '</a></li>';
 		}
