@@ -519,15 +519,15 @@ section#contact  {
   }
 
   .contact-form label {
-    @include cf_label;
+    //@include cf_label;
   }
 
   .caldera-grid .btn-default {
-    @include cf_submit;
+    //@include cf_submit;
   }
 
   span.field_required {
-    @include cf_required;
+    //@include cf_required;
   }
 
   .product-page-mailing-list-opt-in {
