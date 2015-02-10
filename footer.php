@@ -20,7 +20,7 @@ $data = cwp_theme_data();
 			</div>
 		</div>
 		<div class="copy-notice">
-			<img width="150" height="150" alt="CalderaWP_Logo_White_Text" class="attachment-thumbnail" src="<?php echo get_stylesheet_directory_uri(); ?>">
+			<img width="150" height="150" alt="CalderaWP_Logo_White_Text" class="attachment-thumbnail" src="<?php echo get_stylesheet_directory_uri() . '/images/cwp-logo-white.png'; ?>">
 			<p>&copy; <?php echo date("Y") ?> <a href="<?php echo home_url(); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a></p>
 		</div>
 	</div>
