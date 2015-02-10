@@ -1,0 +1,14 @@
+.vex-content {
+  h1, h2, h3, h4, h5, h6 {
+    color: $dark_green;
+  }
+}
+
+input.vex-dialog-button-primary.vex-dialog-button.vex-first.vex-last {
+  background-color: $dark_green;
+  color: $white;
+  &:hover {
+    background-color: $cwp_green;
+  }
+
+}
