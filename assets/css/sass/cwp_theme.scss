@@ -535,6 +535,9 @@ section#contact  {
     border-radius: 3px;
     margin: 0;
     padding: 11px;
+    > lable {
+      color: $white !important;
+    }
   }
 
   .caldera-grid .footer-button {

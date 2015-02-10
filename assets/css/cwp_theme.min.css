@@ -1668,6 +1668,8 @@ section#contact {
     border-radius: 3px;
     margin: 0;
     padding: 11px; }
+    section#contact .contact-form .checkbox > lable {
+      color: #F6F9F0 !important; }
   section#contact .caldera-grid .footer-button {
     background-image: none;
     background-color: #7D923B;
