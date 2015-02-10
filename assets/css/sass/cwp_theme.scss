@@ -873,6 +873,14 @@ section#footer {
   }
 }
 
+.copy-notice {
+  text-align: center;
+}
+.copy-notice > div {
+  color: $white;
+  font-size: 10px;
+  margin: 22px;
+}
 
 
 .docs-preview.docs-list {
