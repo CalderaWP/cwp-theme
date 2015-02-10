@@ -231,7 +231,7 @@ class CWP_Data {
 			}else{
 				$title = $item->title;
 			}
-
+			var_dump( $item );
 			$url = $item->url;
 			$menu_list .= '<li><a href="' . esc_url( $url ) . '" title="' . esc_attr( $item->post_excerpt ) .'">' . $title . '</a></li>';
 		}
