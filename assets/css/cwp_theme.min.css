@@ -1840,7 +1840,8 @@ section#contact {
     background-attachment: scroll; } }
 .header-cover {
   background-attachment: scroll;
-  height: 500px; }
+  height: 500px;
+  background-color: #E7E8E9; }
   .header-cover .logo img {
     width: 75px;
     height: 75px;
