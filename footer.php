@@ -19,7 +19,7 @@ $data = cwp_theme_data();
 				<?php echo $data->menu( 'Footer' ); ?>
 			</div>
 		</div>
-		&copy; <?php echo date("Y") ?> <a href="<?php echo home_url(); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a>
+		<div class="copy-notice">&copy; <?php echo date("Y") ?> <a href="<?php echo home_url(); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a></div>
 	</div>
 </section>
 
