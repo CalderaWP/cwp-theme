@@ -382,6 +382,7 @@ input.button {
     color: $white;
     text-align: center;
     padding: 50px 0;
+    border-radius: 10px 10px 0 0;
     .package {
       font-size: 30px;
       font-weight: bold;
@@ -404,7 +405,7 @@ input.button {
       padding-top: 10px;
     }
     .featcontent {
-      background: $white;
+      background: $caldera_grey;
     }
     .featcontent {
       .feat-list {
@@ -431,17 +432,17 @@ input.button {
         text-align: center;
         padding-bottom: 40px;
         a {
-            padding: 15px 30px;
-            background: #424a56;
+          padding: 15px 30px;
+          background: #424a56;
+          color: $white !important;
+          text-decoration: none;
+          transition: ease-in-out;
+          transition-duration: .3s;
+          &:hover {
+            background: $secondary2Shade2;
             color: $white !important;
             text-decoration: none;
-            transition: ease-in-out;
-            transition-duration: .3s;
-            &:hover {
-              background: $secondary2Shade2;
-              color: $white !important;
-              text-decoration: none;
-            }
+          }
         }
 
       }
@@ -451,6 +452,7 @@ input.button {
   }
 
 }
+
 
 
 
@@ -525,7 +527,7 @@ section#contact  {
 
   .contact-form .form-group > label {
     @include cf_label;
-    
+
     .field_required{
       color: $white !important;
     }
@@ -905,6 +907,6 @@ section#footer {
   }
 }
 
-  p {
-    font-size: 1.5em;
-  }
+p {
+  font-size: 1.5em;
+}

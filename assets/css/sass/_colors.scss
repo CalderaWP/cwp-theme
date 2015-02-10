@@ -33,21 +33,25 @@ $dark: #404041;
 $caldera_black: #3a3a3c;
 
 $highlight: #6073BE;
-$accent: #AA60BE;
+$accent: #0A7A6F;
 $gray: #8F8F8F;
 $white: #F6F9F0;
+$caldera_black: #3a3a3c;
+$caldera_grey: #E7E8E9;
+
 
 $primary : $cwp_green;
 $secondary1 : $accent;
 $secondary2 : $highlight;
 
-$secondary1Shade1 : darken( $secondary1, 20% );
-$secondary1Shade2 : darken( $secondary1, 40% );
-$secondary1Tint1 : lighten( $secondary1, 20% );
-$secondary1Tint2: lighten( $secondary1, 40% );
 
-$secondary2Shade1 : darken( $secondary2, 20% );
-$secondary2Shade2 : darken( $secondary2, 40% );
-$secondary2Tint1 : lighten( $secondary2, 20% );
-$secondary2Tint2: lighten( $secondary2, 40% );
+$secondary1Shade1 : darken( $caldera_grey, 20% );
+$secondary1Shade2 : darken( $caldera_grey, 40% );
+$secondary1Tint1 : lighten( $caldera_grey, 20% );
+$secondary1Tint2: lighten( $caldera_grey, 40% );
+
+$secondary2Shade1 : darken( $white, 20% );
+$secondary2Shade2 : darken( $white, 40% );
+$secondary2Tint1 : lighten( $white, 20% );
+$secondary2Tint2: lighten( $white, 40% );
 
