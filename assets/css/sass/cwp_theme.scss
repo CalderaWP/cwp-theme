@@ -950,3 +950,22 @@ section#footer {
 ul#menu-Footer{
   text-align:center;
 }
+
+/**HEADER ADJUSTMENTS**/
+.header-cover {
+  background-color: $caldera_grey;
+  background-position: 50% 70% !important;
+  background-size: 20% !important;
+}
+
+@media (max-width: 600px) {
+
+  .single-download .header-cover, .single-free_plugin .header-cover {
+    background-size: 50% !important;
+    background-position: 50% 90%!important;
+  }
+  .header-cover {
+    background-size: 30%!important;
+    background-position: 50% 90%!important;
+  }
+}
