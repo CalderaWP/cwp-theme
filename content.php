@@ -55,29 +55,28 @@
 
 	</div> <!-- /post-header -->
 
-	<div class="container">
-		<div class="post-content col-lg-12 col-sm-12">
-			<?php
-				if ( is_single() || is_page() ) :
-					the_content();
-					wp_link_pages();
-				else : ?>
-				<div class="container">
-					<div class="col-lg-3 col-sm-12">
-						<?php the_post_thumbnail(); ?>
-					</div>
-					<div class="col-lg-9 col-sm-12">
-						<?php the_excerpt(); ?>
-						<?php printf( '<p class="read-more"><a href="%s" rel="bookmark">Read More</a></p>', esc_url( get_permalink() ) ); ?>
-					</div>
+	<div class="post-content col-lg-12 col-sm-12">
+		<?php
+			if ( is_single() || is_page() ) :
+				the_content();
+				wp_link_pages();
+			else : ?>
+			
+			<div class="col-lg-3 col-sm-12">
+				<?php the_post_thumbnail(); ?>
+			</div>
+			<div class="col-lg-9 col-sm-12">
+				<?php the_excerpt(); ?>
+				<?php printf( '<p class="read-more"><a href="%s" rel="bookmark">Read More</a></p>', esc_url( get_permalink() ) ); ?>
+			</div>
 
-				</div>
-			<?php endif; ?>
-
+			
+		<?php endif; ?>
 
 
-		</div> <!-- /post-content -->
-	</div>
+
+	</div> <!-- /post-content -->
+
 </section>
             
 <div class="clear"></div>
