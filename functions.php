@@ -49,7 +49,6 @@ function cwp_theme_scripts_styles() {
    wp_localize_script( 'cwp_theme', 'cwp_theme', array( 'adminajax' => admin_url( 'admin-ajax.php') ) );
 
 
-
    wp_enqueue_style( 'bootstrap', '//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css' );
    wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Lato:100,400,900,400italic,700italic,900italic|Merriweather:400,700,300' );
 

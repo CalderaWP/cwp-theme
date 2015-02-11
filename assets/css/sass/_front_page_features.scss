@@ -38,12 +38,21 @@
 
     }
     @media (max-width: 600px) {
-      h3, h3 span {
-        display: block;
-      }
-      h3 span {
-        text-align: right;
-        margin-top: 10px;
+      h3 {
+        float: none;
+        a {
+          display: block;
+          float: none;
+          text-align: center;
+
+        }
+        span {
+          display: block;
+          float: none;
+        }
+        a, span {
+          line-height: 1em;
+        }
       }
     }
 

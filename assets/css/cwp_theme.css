@@ -1175,11 +1175,17 @@ ul#footer-menu li {
       margin: 0px;
       line-height: 0px; }
     @media (max-width: 600px) {
-      .front-page-feature .title-wrap h3, .front-page-feature .title-wrap h3 span {
-        display: block; }
-      .front-page-feature .title-wrap h3 span {
-        text-align: right;
-        margin-top: 10px; } }
+      .front-page-feature .title-wrap h3 {
+        float: none; }
+        .front-page-feature .title-wrap h3 a {
+          display: block;
+          float: none;
+          text-align: center; }
+        .front-page-feature .title-wrap h3 span {
+          display: block;
+          float: none; }
+        .front-page-feature .title-wrap h3 a, .front-page-feature .title-wrap h3 span {
+          line-height: 1em; } }
   .front-page-feature p {
     margin-bottom: 1.25em;
     line-height: 1.5em;
