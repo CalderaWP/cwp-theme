@@ -19,7 +19,10 @@ $data = cwp_theme_data();
 				<?php echo $data->menu( 'Footer' ); ?>
 			</div>
 		</div>
-		&copy; <?php echo date("Y") ?> <a href="<?php echo home_url(); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a>
+		<div class="copy-notice">
+			<img width="80" height="80" alt="CalderaWP_Logo_White_Text" class="attachment-thumbnail" src="<?php echo get_stylesheet_directory_uri() . '/images/cwp-logo-white.png'; ?>">
+			<div>&copy; <?php echo date("Y") ?> <a href="<?php echo home_url(); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a> - All Rights Reserved</div>
+		</div>
 	</div>
 </section>
 

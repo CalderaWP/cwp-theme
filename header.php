@@ -2,6 +2,11 @@
 	$data =  cwp_theme_data();
 	$atts = $data->header_atts;
 
+	$header_style = 'height: 0;';
+	if( !empty( $atts[ 'header_bg' ] ) ){
+		$header_style = 'background-image: url( ' . esc_url( $atts[ 'header_bg' ] ) . ' );background-repeat: no-repeat; background-position: 50% bottom;';
+	}
+
  ?>
 
 <!DOCTYPE html>
@@ -26,7 +31,7 @@
 
 		<div class="big-wrapper">
 	
-			<div class="header-cover section bg-dark-light no-padding" style="background-image: url(<?php echo esc_url( $atts[ 'header_bg' ] ); ?>);background-repeat: no-repeat; background-position: 50%;background-size: <?php echo $atts[ 'header_size' ]; ?>;background-color: #0A7A6F;">
+			<div class="header-cover section bg-dark-light no-padding" style="<?php echo $header_style; ?>">
 
 				<div id="home" class="top">
 					<div class="container">

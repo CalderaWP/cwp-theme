@@ -50,13 +50,12 @@ h1, h2, h3, h4, h5, h6,  {
 /*----- Logo & Nav -----*/
 
 .top {
-  position:absolute;
-  z-index:999;
-  width:100%;
-  top:50px;
+  background-color: $alt_light;
+  box-shadow: 0 5px 0 rgba(0, 0, 0, 0.2);
+  position: relative;
+  width: 100%;
+  z-index: 999;
 }
-
-
 
 .nav {
   font-size:14px;
@@ -266,6 +265,7 @@ input.button {
 
 .feature-container img {
   max-width:100%;
+  margin-top: 26px;
 }
 
 .feature-styles h1 {
@@ -288,7 +288,7 @@ input.button {
 
 
 .feature-styles .getstarted a{
-  color:$secondary2Shade1 !important;
+  //color:$secondary2Shade1 !important;
   text-decoration:none;
   font-weight:bold;
   transition:ease-in-out;
@@ -388,11 +388,6 @@ input.button {
       font-weight: bold;
 
     }
-    .package {
-      font-size: 30px;
-      font-weight: bold;
-
-    }
     .divider {
       height: 2px;
       background: rgba(255, 255, 255, .3);
@@ -410,14 +405,9 @@ input.button {
       padding-top: 10px;
     }
     .featcontent {
-      background: $gray;
-      border-radius: 0 0 10px 10px;
-      text-align: center;
+      background: $white;
     }
     .featcontent {
-      background: $gray;
-      border-radius: 0 0 10px 10px;
-      text-align: center;
       .feat-list {
         font-size: 20px;
         font-weight: 300;
@@ -442,17 +432,17 @@ input.button {
         text-align: center;
         padding-bottom: 40px;
         a {
-          padding: 15px 30px;
-          background: #424a56;
-          color: $white !important;
-          text-decoration: none;
-          transition: ease-in-out;
-          transition-duration: .3s;
-          &:hover {
-            background: $secondary2Shade2;
+            padding: 15px 30px;
+            background: #424a56;
             color: $white !important;
             text-decoration: none;
-          }
+            transition: ease-in-out;
+            transition-duration: .3s;
+            &:hover {
+              background: $secondary2Shade2;
+              color: $white !important;
+              text-decoration: none;
+            }
         }
 
       }
@@ -463,9 +453,13 @@ input.button {
 
 }
 
-
-
-
+/*----- Section general ---*/
+section{
+  background-color: $white;
+}
+section#docs {
+  padding: 20px 0 50px;
+}
 /*---- Contact Section ---*/
 section#contact  {
   background:$alt_dark;
@@ -507,6 +501,10 @@ section#contact  {
   .contact-form input[type="text"],
   .contact-form input[type="email"] {
     @include cf_input;
+    box-shadow: 0 0 0 4px rgba(0,0,0,0.03);
+    &:focus{
+      box-shadow: 0 0 0 4px rgba(0,0,0,0.1);
+    }
   }
 
   .container {
@@ -537,7 +535,7 @@ section#contact  {
 
   .contact-form .form-group > label {
     @include cf_label;
-
+    
     .field_required{
       color: $white !important;
     }
@@ -591,11 +589,22 @@ section#contact  {
 }
 
 
+.header-cover {
+  background-attachment:scroll;
+  height:500px;
+  background-color: $primary;
+  .logo img {
+    width: 75px;
+    height: 75px;
+    margin: 12px 0;
+  }
+}
 
-@media (min-width: 768px) {
+
+@media (min-width: 992px) {
   .logo
   {
-    text-align:center;
+    text-align:left;
 
   }
 
@@ -609,12 +618,10 @@ section#contact  {
     font-size:14px;
     color:$white;
     text-align:center;
-    margin-top:10px;
     ul {
       padding:0px;
       margin:0px;
       list-style:none;
-      text-align:center;
     }
     li {
       display: inline-block;
@@ -628,6 +635,8 @@ section#contact  {
       text-decoration:none;
       text-transform:uppercase;
       font-weight:900;
+      padding: 39px 3px;
+      display: inline-block;
       &:hover {
         color: $primary;
       }
@@ -639,7 +648,10 @@ section#contact  {
 
 }
 
-@media (min-width: 320px) and (max-width:767px) {
+@media (min-width: 320px) and (max-width:991px) {
+  .header-cover {
+    background-size: 100% auto;
+  }
 
   .logo
   {
@@ -808,37 +820,28 @@ section#contact  {
   }
 
 }
+@media (min-width: 501px) and (max-width:700px) {
+  .header-cover {
+    height: 400px;
+  }
+}
+@media (min-width: 321px) and (max-width:500px) {
+  .header-cover {
+    height: 330px;
+  }
+}
 
-@media (max-width: 320px)
-{
+@media (max-width: 320px){
   .banner .carousel-fade .carousel-inner .item {
 
     background-attachment:scroll;
 
   }
-
-}
-
-
-.header-cover {
-  background-attachment:scroll;
-  height:500px;
-  .logo img {
-    width: 75px;
-    height: 75px;
-  }
-}
-@media (max-width: 600px) {
   .header-cover {
-
-    .logo img {
-
-      width: 25px;
-      height: 25px;
-    }
+    height: 200px;
   }
-}
 
+}
 
 
 #price-1 {
@@ -861,32 +864,28 @@ section#contact  {
 .purchase-button a, .purchase-button {
   @include sell_button;
   margin: 24px 25%;
+  border-radius: 6px;
 }
 
-
+.featcontent {
+  background: $caldera_grey;
+  border-radius: 0 0 10px 10px;
+  text-align: center;
+}
 
 .edd_purchase_submit_wrapper a.edd-add-to-cart.edd-has-js {
   display: inline-block;
-  margin: 24px 25%;
+  //margin: 24px 25%; ? say what?
 }
 
 #product-description {
   h2{
     font-size: 4em;
     text-align: center;
-    margin: 24px 0px;
+    margin: 50px 0px;
     color: $dark_green;
   }
 
-}
-
-@media (max-width: 600px) {
-  #product-description {
-    h2 {
-      font-size: 2.25em;
-
-    }
-  }
 }
 
 section#footer {
@@ -898,6 +897,14 @@ section#footer {
   }
 }
 
+.copy-notice {
+  text-align: center;
+}
+.copy-notice > div {
+  color: $white;
+  font-size: 10px;
+  margin: 22px;
+}
 
 
 .docs-preview.docs-list {
@@ -925,7 +932,7 @@ section#footer {
 }
 
 .genericon:hover {
-  color: $primaryShade2;
+  //color: $primaryShade2;
 }
 
 
@@ -936,12 +943,10 @@ section#footer {
   }
 }
 
-p {
-  font-size: 1.5em;
-}
+  p {
+    font-size: 1.5em;
+  }
 
-.featcontent {
-  background: $caldera_grey;
-  border-radius: 0 0 10px 10px;
-  text-align: center;
+ul#menu-Footer{
+  text-align:center;
 }

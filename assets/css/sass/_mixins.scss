@@ -53,6 +53,7 @@
 }
 
 @mixin sell_button() {
+  border: none;
   padding: 15px 30px; background: #424A56; color: #FFF !important; text-decoration: none; transition: ease-in-out; transition-duration: .3s;
   margin: 24px 0;
   font-size: 2em;
@@ -61,6 +62,6 @@
   text-decoration: none;
   &:hover {
     background-color: $secondary1;
-
+    text-decoration: none;
   }
 }

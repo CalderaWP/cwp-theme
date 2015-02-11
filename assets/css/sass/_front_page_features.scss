@@ -20,7 +20,7 @@
     background-color: $primary;
     width: 100%;
     display: inline-block;
-    padding: 12px 12px 32px;
+    padding: 12px 20px 32px;
     line-height: 0;
     h3 {
       a {
@@ -28,7 +28,7 @@
         float: left;
       }
       span {
-        color: $caldera_grey;
+        color: $white;
         float: right;
       }
       a, span {
@@ -38,21 +38,12 @@
 
     }
     @media (max-width: 600px) {
-      h3 {
+      h3, h3 span {
         display: block;
-        a {
-          display: block;
-          float: none;
-        }
-        span {
-          display: block;
-          float: none;
-        }
-        a, span {
-          margin: 0px;
-          line-height: 2em;
-        }
-
+      }
+      h3 span {
+        text-align: right;
+        margin-top: 10px;
       }
     }
 
