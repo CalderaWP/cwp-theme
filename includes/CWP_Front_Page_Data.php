@@ -25,6 +25,7 @@ class CWP_Front_Page_Data {
 				'title_link_title' => 'Caldera Plugins: Complex Tasks Made Easy',
 				'background' => 9,
 				'background_style' => '',
+				'hide_tagline_small' => true,
 				'content' => array(
 
 				),

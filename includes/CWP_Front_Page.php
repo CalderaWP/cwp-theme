@@ -43,9 +43,22 @@ class CWP_Front_Page extends CWP_Front_Page_Data {
 	 * @return string
 	 */
 	protected static function front_page_feature( $data ) {
-		$out[] = sprintf( '<div class="title-wrap">
-						<h3><a href="%1s" title="%2s">%3s</a> <span>%4s</span></h3>
-			</div><div class="clear"></div>', $data[ 'title_link' ], $data[ 'title_link_title' ], $data[ 'title' ], $data[ 'tagline' ] );
+		$span_class = 'feature-tagline ';
+		if ( isset( $data[ 'hide_tagline_small' ] ) && $data[ 'hide_tagline_small' ] ) {
+			$span_class .= $data[ 'hide_tagline_small' ] = 'hidden-xs hidden-sm';
+			$span_class = sprintf( 'class="%1s"', $span_class );
+		}
+
+		$out[] = sprintf(
+			'<div class="title-wrap">
+					<h3><a href="%1s" title="%2s">%3s</a> <span %4s>%5s</span></h3>
+			</div><div class="clear"></div>',
+			$data[ 'title_link' ],
+			$data[ 'title_link_title' ],
+			$data[ 'title' ],
+			$span_class,
+			$data[ 'tagline' ]
+		);
 
 		$content = false;
 		if ( isset( $data[ 'content' ][ 'p' ] ) ) {
