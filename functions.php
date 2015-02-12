@@ -223,24 +223,7 @@ add_filter( 'dsgnwrks_snippet_display', function( $snippet_html, $atts, $snippet
 
 }, 10, 3 );
 
-/**
- * Hook into the_content
- */
-add_action( 'init',
-    function() {
-       add_filter( 'the_content',
-           function( $content ) {
-              if ( is_page( CWP_Docs::$docs_page_id ) ) {
-                 $content = CWP_Docs::content_filter( $content );
-              }
 
-              return $content;
-
-           },
-           35 );
-
-    },
-    35 );
 
 /**
  * Remove EDD's microdata on post title in the "After Download" Pods Template
