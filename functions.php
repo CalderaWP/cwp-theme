@@ -223,7 +223,24 @@ add_filter( 'dsgnwrks_snippet_display', function( $snippet_html, $atts, $snippet
 
 }, 10, 3 );
 
+/**
+ * Hook into the_content
+ */
+add_action( 'init',
+    function() {
+       add_filter( 'the_content',
+           function( $content ) {
+              if ( is_page( CWP_Docs::$docs_page_id ) ) {
+                 $content = CWP_Docs::content_filter( $content );
+              }
 
+              return $content;
+
+           },
+           35 );
+
+    },
+    35 );
 
 /**
  * Remove EDD's microdata on post title in the "After Download" Pods Template
@@ -263,22 +280,6 @@ add_filter( 'upload_size_limit', function( $limit ) {
    }
 
    return $limit;
-
-});
-
-/**
- * Make a account/purchases/checkout pages a login or register form if not logged in or registered.
- */
-add_filter( 'the_content', function( $content )  {
-   if ( ! is_user_logged_in() && CWP_Theme_EDD::is_checkout() ) {
-      $id = 'CF54cdab1e3d906';
-      if ( strpos( home_url(), 'calderawp.com' ) ) {
-         $id ='CF54d9c8f7324f1';
-      }
-      $content = Caldera_Forms::render_form( $id );
-   }
-
-   return $content;
 
 });
 
