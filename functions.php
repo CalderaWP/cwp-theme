@@ -515,3 +515,23 @@ add_action( 'wp_head', function(){
 add_action( 'plugins_loaded', function() {
    add_filter( 'jetpack_development_mode', '__return_true' );
 });
+
+/**
+ * Show the featured plugins grid
+ *
+ * @return string
+ */
+function cwp_theme_featured_plugins() {
+   $out = '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="featured">
+				<h3>Featured Plugins</h3>
+				<div class="block-grid-3">
+					'.  cep_render_easy_pod( 'featured_products' ) . '
+               </div>
+               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 all-plugins">
+                  <a href="'. esc_url( home_url( 'plugins' ) ) .'" class="button big-cta">See All Plugins</a>
+               </div>
+
+            </div>';
+   return $out;
+
+}

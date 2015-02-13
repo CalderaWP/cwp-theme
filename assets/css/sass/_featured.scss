@@ -1,0 +1,59 @@
+#featured {
+  padding: 0;
+  background-color: $dark_green;
+  color: $white;
+
+  h3 {
+    text-align: center;
+    font-size: 2em;
+    padding: 8px;
+    color: $white;
+  }
+  .button {
+    @include cf_submit($alt_dark, $white);
+    background-color: $alt_dark;
+
+  }
+
+  .big-cta {
+    padding: 24px;
+    display: inline-block;
+    text-align: center;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    width: 95%;
+    margin-bottom: 24px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    margin: 0 2.5% 12px;
+  }
+
+  .block-grid-3 .block-grid-item {
+    a {
+      color: $white !important;
+      &:hover {
+        color: $alt_dark !important;
+      }
+    }
+
+  }
+
+}
+
+.single-post #featured {
+  .product-preview {
+    background: none;
+  }
+  .big-cta {
+    color: $white !important;
+    a:hover {
+      background-color: $white !important;
+      color: $alt_dark !important;
+
+    }
+    &:hover {
+      color: $alt_dark !important;
+    }
+  }
+}

@@ -57,10 +57,13 @@
 
 	<div class="post-content col-lg-12 col-sm-12">
 		<?php
-			if ( is_single() || is_page() ) :
+			if ( is_single() || is_page() ) {
 				the_content();
 				wp_link_pages();
-			else : ?>
+				if ( ! is_front_page() || ! is_page( 'about-calderawp' ) ) {
+					echo cwp_theme_featured_plugins();
+				 }
+			} else { ?>
 			
 			<div class="col-lg-3 col-sm-12">
 				<?php the_post_thumbnail(); ?>
@@ -71,7 +74,7 @@
 			</div>
 
 			
-		<?php endif; ?>
+		<?php } ?>
 
 
 

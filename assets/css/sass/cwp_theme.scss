@@ -31,6 +31,7 @@
 @import "post";
 @import "front_page";
 @import "product-preview";
+@import "featured";
 
 
 body {
@@ -955,6 +956,7 @@ ul#menu-Footer{
   text-align:center;
 }
 
+
 /**HEADER ADJUSTMENTS**/
 .header-cover {
   background-color: $caldera_grey;
@@ -973,3 +975,6 @@ ul#menu-Footer{
     background-position: 50% 90%!important;
   }
 }
+
+
+

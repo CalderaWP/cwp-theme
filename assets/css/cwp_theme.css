@@ -1153,39 +1153,6 @@ ul#footer-menu li {
   margin: 48px 0 24px;
   text-align: center;
   font-size: 3em; }
-.home #featured {
-  padding: 0;
-  background-color: #7d923b;
-  color: #f6f9f0; }
-  .home #featured h3 {
-    text-align: center;
-    font-size: 2em;
-    padding: 8px;
-    color: #f6f9f0; }
-.home .button {
-  background-image: none;
-  background-color: #7d923b;
-  color: #f6f9f0;
-  text-shadow: none;
-  border: none;
-  padding: 12px;
-  background-color: #0e4c45; }
-  .home .button:hover {
-    color: #0e4c45;
-    background-color: #f6f9f0;
-    text-decoration: none; }
-.home .big-cta {
-  padding: 24px;
-  display: inline-block;
-  text-align: center;
-  font-size: 1.5em;
-  text-transform: uppercase;
-  width: 95%;
-  margin-bottom: 24px;
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  border-radius: 6px;
-  margin: 0 2.5% 12px; }
 .home .feature-container {
   border: 1px solid #e1e1e1;
   box-shadow: 0 5px 0 rgba(0, 0, 0, 0.2);
@@ -1234,6 +1201,54 @@ span#CEP54b718b640d5e838-pagination, span#CEP54d2daa58039b548-pagination {
   text-align: center;
   font-size: 3em;
   color: #7d923b; }
+
+#featured {
+  padding: 0;
+  background-color: #7d923b;
+  color: #f6f9f0; }
+  #featured h3 {
+    text-align: center;
+    font-size: 2em;
+    padding: 8px;
+    color: #f6f9f0; }
+  #featured .button {
+    background-image: none;
+    background-color: #7d923b;
+    color: #f6f9f0;
+    text-shadow: none;
+    border: none;
+    padding: 12px;
+    background-color: #0e4c45; }
+    #featured .button:hover {
+      color: #0e4c45;
+      background-color: #f6f9f0;
+      text-decoration: none; }
+  #featured .big-cta {
+    padding: 24px;
+    display: inline-block;
+    text-align: center;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    width: 95%;
+    margin-bottom: 24px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    margin: 0 2.5% 12px; }
+  #featured .block-grid-3 .block-grid-item a {
+    color: #f6f9f0 !important; }
+    #featured .block-grid-3 .block-grid-item a:hover {
+      color: #0e4c45 !important; }
+
+.single-post #featured .product-preview {
+  background: none; }
+.single-post #featured .big-cta {
+  color: #f6f9f0 !important; }
+  .single-post #featured .big-cta a:hover {
+    background-color: #f6f9f0 !important;
+    color: #0e4c45 !important; }
+  .single-post #featured .big-cta:hover {
+    color: #0e4c45 !important; }
 
 body {
   background-color: #fcfdf7;

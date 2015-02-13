@@ -52,21 +52,7 @@ $atts = $data->header_atts;
 				</div>
 			</div>
 
-
-
-
-			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="featured">
-				<h3>Featured Plugins</h3>
-				<div class="block-grid-3">
-					<?php echo cep_render_easy_pod( 'featured_products' ); ?>
-				</div>
-				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 all-plugins">
-					<a href="#" class="button big-cta">See All Plugins</a>
-				</div>
-
-			</div>
-
-
+			<?php echo cwp_theme_featured_plugins(); ?>
 
 		</div><!--#front-feature-plugins-->
 
