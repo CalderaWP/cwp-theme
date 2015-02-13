@@ -55,12 +55,14 @@ class CWP_Docs {
 
 	public static function link_box( $id ) {
 		$related = get_post_meta( $id, 'product' );
-		if ( empty( $related ) ) {
-			$related = get_post_meta( $id, 'free_plugin' );
+
+		if ( isset( $related[0] ) && is_array( $related[0] ) ) {
+			$related = $related[0];
+			$id = $related[ 'ID' ];
+		}else{
+			return;
 		}
 
-		$related = $related[0];
-		$id = $related[ 'ID' ];
 
 		$out[] = '<div class="container docs-plugin-link-box">';
 		$out[] = '<div class="col-lg-4 col-md-4 hidden-xs hidden-sm">';
