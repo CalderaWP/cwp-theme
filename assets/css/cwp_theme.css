@@ -1166,7 +1166,8 @@ ul#footer-menu li {
   color: #f6f9f0;
   text-shadow: none;
   border: none;
-  padding: 12px; }
+  padding: 12px;
+  background-color: #6073be; }
   .home .button:hover {
     color: #e7e8e9;
     background-color: #404041; }
@@ -1176,8 +1177,12 @@ ul#footer-menu li {
   text-align: center;
   font-size: 1.5em;
   text-transform: uppercase;
-  width: 100%;
-  margin-bottom: 24px; }
+  width: 70%;
+  margin-bottom: 24px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  margin: 0 15% 12px; }
 .home .feature-container {
   border: 1px solid #e1e1e1;
   box-shadow: 0 5px 0 rgba(0, 0, 0, 0.2);
