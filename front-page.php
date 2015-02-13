@@ -36,7 +36,7 @@ $atts = $data->header_atts;
 				<h3>WordPress Shouldn't Be Hard</3>
 			</div>
 			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 text-center">
-				<img src="http://cwp.dev/public/cwp-content/uploads/2015/01/answers-query.png" alt="" class="front-page-img" />
+				<img src="<?php echo esc_url( wp_get_attachment_url( 459 ) ); ?>" alt="Caldera Easy Pods Query Builder" class="front-page-img" />
 			</div>
 			<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
 
@@ -62,7 +62,7 @@ $atts = $data->header_atts;
 			</div>
 
 			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-md-push-8 col-lg-push-8">
-				<img src="http://cwp.dev/public/cwp-content/uploads/2015/02/CalderaWP_Caldera_Answers.png" alt="Caldera Answers Logo" class="front-page-img" />
+				<img src="<?php echo esc_url( wp_get_attachment_url( 775 ) ); ?>" alt="Caldera Answers Logo" class="front-page-img" />
 			</div>
 
 			<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 col-md-pull-4 col-lg-pull-4">
