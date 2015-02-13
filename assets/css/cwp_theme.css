@@ -1948,7 +1948,10 @@ section#footer {
   font-weight: 300; }
 
 .cwp-code-snippet {
-  border: 1px solid black; }
+  border: 2px solid #FFF;
+  border-radius: 4px;
+  background: #272822;
+  margin-bottom: 8px; }
   .cwp-code-snippet .code-snippet-description {
     background: #e7f5c4;
     margin-bottom: 0px;

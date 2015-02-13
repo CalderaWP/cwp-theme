@@ -922,7 +922,10 @@ section#footer {
 
 //syntax highlighter CPT
 .cwp-code-snippet {
-  border: 1px solid black;
+  border: 2px solid #FFF;
+  border-radius: 4px;
+  background: #272822;
+  margin-bottom: 8px;
 
   .code-snippet-description {
     background: $primaryTint2;
