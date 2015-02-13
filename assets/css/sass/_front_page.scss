@@ -1,0 +1,19 @@
+.home {
+  #home {
+    img {
+      width: 75px;
+      height: 75px;
+    }
+
+  }
+
+  .button {
+    width: 100%;
+    @include cf_submit( $caldera_grey, $dark );
+    padding: 24px;
+    display: inline-block;
+    text-align: center;
+    font-size: 1.5em;
+    text-transform: uppercase;
+  }
+}

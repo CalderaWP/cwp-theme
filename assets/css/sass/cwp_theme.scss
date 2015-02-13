@@ -29,7 +29,7 @@
 @import "menu";
 
 @import "post";
-@import "front_page_features";
+@import "front_page";
 @import "product-preview";
 
 
@@ -45,6 +45,10 @@ h1, h2, h3, h4, h5, h6,  {
 
 .clear {
   clear: both;
+}
+
+.button {
+  @include cf_submit;
 }
 
 /*----- Logo & Nav -----*/

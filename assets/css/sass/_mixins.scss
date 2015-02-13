@@ -30,7 +30,7 @@
   padding-top: 12px;
 }
 
-@mixin cf_submit() {
+@mixin cf_submit( $hover_color : $dark_green, $hover_bg : $white  ) {
   background-image: none;
   background-color: $dark_green;
   color: $white;
@@ -38,8 +38,8 @@
   border: none;
   padding: 12px;
   &:hover {
-    color: $dark_green;
-    background-color: $white;
+    color: $hover_color;
+    background-color: $hover_bg;
   }
 
 }
