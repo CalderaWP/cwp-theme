@@ -52,9 +52,7 @@ $atts = $data->header_atts;
 				</div>
 			</div>
 
-			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 hidden-lg hidden-md all-plugins">
-				<a href="#" class="button big-cta">See All Plugins</a>
-			</div>
+
 
 
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="featured">
@@ -62,12 +60,13 @@ $atts = $data->header_atts;
 				<div class="block-grid-3">
 					<?php echo cep_render_easy_pod( 'featured_products' ); ?>
 				</div>
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 all-plugins">
+					<a href="#" class="button big-cta">See All Plugins</a>
+				</div>
 
 			</div>
 
-			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 hidden-sm hidden-xs all-plugins">
-				<a href="#" class="button big-cta">See All Plugins</a>
-			</div>
+
 
 		</div><!--#front-feature-plugins-->
 

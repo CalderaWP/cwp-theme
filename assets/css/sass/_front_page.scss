@@ -16,10 +16,11 @@
 
   #featured {
     padding: 0;
+    background-color: $dark_green;
+    color: $white;
     h3 {
       text-align: center;
       font-size: 2em;
-      background-color: $dark_green;
       padding: 8px;
       color: $white;
     }
@@ -27,8 +28,9 @@
   }
 
   .button {
-    @include cf_submit($caldera_grey, $dark);
-    background-color: $highlight;
+    @include cf_submit( $alt_dark, $white );
+    background-color: $alt_dark;
+
   }
   .big-cta {
     padding: 24px;
@@ -36,23 +38,16 @@
     text-align: center;
     font-size: 1.5em;
     text-transform: uppercase;
-    width: 70%;
+    width: 95%;
     margin-bottom: 24px;
     -webkit-border-radius: 6px;
     -moz-border-radius: 6px;
     border-radius: 6px;
-    margin: 0 15% 12px;
+    margin: 0 2.5% 12px;
   }
 
   .feature-container {
-    border: 1px solid #e1e1e1;
-    box-shadow: 0 5px 0 rgba(0, 0, 0, 0.2);
-    border-radius: 9px;
-    background-color: $white;
-    overflow: hidden;
-    margin-bottom: 24px;
-    background-position-y: 0;
-    background-repeat: no-repeat;
+    @include rounded_section;
     .title-wrap {
       background-color: $primary;
       width: 100%;
