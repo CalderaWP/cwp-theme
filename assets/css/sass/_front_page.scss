@@ -1,0 +1,46 @@
+.home {
+
+  #home {
+    img {
+      width: 75px;
+      height: 75px;
+    }
+
+  }
+
+  .logo {
+    margin-top: 6px;
+  }
+
+  h2.post-title {
+    @include title;
+    text-align: center;
+    font-size: 3em;
+  }
+
+  .feature-container {
+    @include rounded_section;
+    .title-wrap {
+      background-color: $primary;
+      width: 100%;
+      display: inline-block;
+      line-height: 0;
+      h3 {
+        color: $white;
+        text-align: center;
+      }
+
+    }
+
+  }
+
+  .container.feature-container {
+    padding: 0;
+  }
+
+  .title-wrap h3 a {
+    color: $white;
+    &:hover {color: $alt_light; }
+  }
+
+}

@@ -5,10 +5,9 @@
     padding-bottom: 50px;
     padding-top: 20px;
   }
+
   h2.post-title {
-    color: $secondary1;
-    text-shadow: none;
-    margin: 48px 0 24px;
+    @include title;
   }
 
   .product-preview {
