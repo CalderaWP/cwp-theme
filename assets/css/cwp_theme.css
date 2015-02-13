@@ -2012,3 +2012,5 @@ ul#menu-Footer {
   .header-cover {
     background-size: 30% !important;
     background-position: 50% 90% !important; } }
+.cwpa-link.button {
+  background: none; }
