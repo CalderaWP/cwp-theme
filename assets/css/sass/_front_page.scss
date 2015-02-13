@@ -1,4 +1,5 @@
 .home {
+
   #home {
     img {
       width: 75px;
@@ -7,13 +8,64 @@
 
   }
 
+  h2.post-title {
+    @include title;
+    text-align: center;
+    font-size: 3em;
+  }
+
+  #featured {
+    padding: 0;
+    h3 {
+      text-align: center;
+      font-size: 2em;
+      background-color: $dark_green;
+      padding: 8px;
+      color: $white;
+    }
+
+  }
+
   .button {
-    width: 100%;
-    @include cf_submit( $caldera_grey, $dark );
+
+    @include cf_submit($caldera_grey, $dark);
+  }
+  .big-cta {
     padding: 24px;
     display: inline-block;
     text-align: center;
     font-size: 1.5em;
     text-transform: uppercase;
+    width: 100%;
+    margin-bottom: 24px;
   }
+
+  .feature-container {
+    border: 1px solid #e1e1e1;
+    box-shadow: 0 5px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 9px;
+    background-color: $white;
+    overflow: hidden;
+    margin-bottom: 24px;
+    background-position-y: 0;
+    background-repeat: no-repeat;
+    .title-wrap {
+      background-color: $primary;
+      width: 100%;
+      display: inline-block;
+      line-height: 0;
+      h3 {
+        color: $white;
+        text-align: center;
+      }
+
+    }
+
+  }
+
+  .container.feature-container {
+    padding: 0;
+  }
+
+
 }
