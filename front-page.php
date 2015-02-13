@@ -33,7 +33,7 @@ $atts = $data->header_atts;
 
 		<div class="container feature-container" id="front-feature-plugins">
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 title-wrap">
-				<h3>WordPress Shouldn't Be Hard</3>
+				<h3><a href="<?php echo esc_url( home_url( 'plugins' ) ); ?>">WordPress Shouldn't Be Hard</a></h3>
 			</div>
 			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 text-center">
 				<img src="<?php echo esc_url( wp_get_attachment_url( 459 ) ); ?>" alt="Caldera Easy Pods Query Builder" class="front-page-img" />
@@ -58,7 +58,7 @@ $atts = $data->header_atts;
 
 		<div class="container feature-container" id="front-feature-caldera-answers">
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 title-wrap ">
-				<h3>Learn WordPress The Right Way</3>
+				<h3><a href="<?php echo CWP_Theme_Caldera_Answers::parent_page_link(); ?>">Learn WordPress The Right Way</a></h3>
 			</div>
 
 			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-md-push-8 col-lg-push-8">

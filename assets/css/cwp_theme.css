@@ -1176,6 +1176,10 @@ ul#footer-menu li {
       text-align: center; }
 .home .container.feature-container {
   padding: 0; }
+.home .title-wrap h3 a {
+  color: #f6f9f0; }
+  .home .title-wrap h3 a:hover {
+    color: #0a7a6f; }
 
 .product-preview {
   overflow: hidden; }
