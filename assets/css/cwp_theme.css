@@ -1144,42 +1144,44 @@ ul#footer-menu li {
   .single-post .nav li a:hover {
     color: #7d923b; }
 
-.home #home img {
-  width: 75px;
-  height: 75px; }
-.home .logo {
-  margin-top: 6px; }
-.home h2.post-title {
-  color: #0a7a6f;
-  text-shadow: none;
-  margin: 48px 0 24px;
-  text-align: center;
-  font-size: 3em; }
-.home .feature-container {
-  border: 1px solid #e1e1e1;
-  box-shadow: 0 5px 0 rgba(0, 0, 0, 0.2);
-  border-radius: 9px;
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  background-color: #f6f9f0;
-  overflow: hidden;
-  margin-bottom: 24px;
-  background-position-y: 0;
-  background-repeat: no-repeat; }
-  .home .feature-container .title-wrap {
-    background-color: #a3be60;
-    width: 100%;
-    display: inline-block;
-    line-height: 0; }
-    .home .feature-container .title-wrap h3 {
-      color: #f6f9f0;
-      text-align: center; }
-.home .container.feature-container {
-  padding: 0; }
-.home .title-wrap h3 a {
-  color: #f6f9f0; }
-  .home .title-wrap h3 a:hover {
-    color: #0a7a6f; }
+.home {
+  font-size: 1.35em; }
+  .home #home img {
+    width: 75px;
+    height: 75px; }
+  .home .logo {
+    margin-top: 6px; }
+  .home h2.post-title {
+    color: #0a7a6f;
+    text-shadow: none;
+    margin: 48px 0 24px;
+    text-align: center;
+    font-size: 3em; }
+  .home .feature-container {
+    border: 1px solid #e1e1e1;
+    box-shadow: 0 5px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 9px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    background-color: #f6f9f0;
+    overflow: hidden;
+    margin-bottom: 24px;
+    background-position-y: 0;
+    background-repeat: no-repeat; }
+    .home .feature-container .title-wrap {
+      background-color: #a3be60;
+      width: 100%;
+      display: inline-block;
+      line-height: 0; }
+      .home .feature-container .title-wrap h3 {
+        color: #f6f9f0;
+        text-align: center; }
+  .home .container.feature-container {
+    padding: 0; }
+  .home .title-wrap h3 a {
+    color: #f6f9f0; }
+    .home .title-wrap h3 a:hover {
+      color: #0a7a6f; }
 
 .product-preview {
   overflow: hidden; }
@@ -1971,7 +1973,7 @@ section#footer {
     color: #a3be60 !important; }
 
 p {
-  font-size: 1.5em; }
+  font-size: 1.2em; }
 
 ul#menu-Footer {
   text-align: center; }
