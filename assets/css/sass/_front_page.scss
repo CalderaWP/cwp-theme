@@ -8,6 +8,10 @@
 
   }
 
+  .logo {
+    margin-top: 6px;
+  }
+
   h2.post-title {
     @include title;
     text-align: center;

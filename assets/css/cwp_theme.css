@@ -1147,6 +1147,8 @@ ul#footer-menu li {
 .home #home img {
   width: 75px;
   height: 75px; }
+.home .logo {
+  margin-top: 6px; }
 .home h2.post-title {
   color: #0a7a6f;
   text-shadow: none;
