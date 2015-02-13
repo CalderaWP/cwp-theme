@@ -956,6 +956,32 @@ ul#menu-Footer{
   text-align:center;
 }
 
+/**Plugin Link In Docs**/
+.container.docs-plugin-link-box {
+  background-color: $dark_green;
+  padding: 12px;
+  color: $white;
+  text-align: center;
+  width: 80%;
+  h3 {
+    font-size: 3em;
+  }
+}
+
+.container.docs-plugin-link-box a.button {
+  background: $alt_dark !important;
+  color: $white !important;
+  border-radius: 9px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  width: 40%;
+  display: inline-block;
+  &:hover {
+    color: $alt_dark !important;
+    background: $white !important;
+
+  }
+}
 
 /**HEADER ADJUSTMENTS**/
 .header-cover {
