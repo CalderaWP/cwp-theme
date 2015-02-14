@@ -510,13 +510,6 @@ add_action( 'wp_head', function(){
 });
 
 /**
- * Make Jetpack not require connection to WPORG
- */
-add_action( 'plugins_loaded', function() {
-   add_filter( 'jetpack_development_mode', '__return_true' );
-});
-
-/**
  * Show the featured plugins grid
  *
  * @return string
