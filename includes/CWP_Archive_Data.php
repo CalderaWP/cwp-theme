@@ -24,7 +24,7 @@ class CWP_Archive_Data extends CWP_Data {
 	public function header_atts() {
 		$atts = array(
 			'tagline' =>  get_bloginfo( 'description' ),
-			'header_bg' => wp_get_attachment_image_src( cwp_theme_cwp_logo_id( false ) ),
+			'header_bg' => wp_get_attachment_image_src( cwp_theme_cwp_logo_id( false ), 'large' ),
 			'title' => get_bloginfo( 'title' ),
 			'header_size' => '250px',
 			'logo' => wp_get_attachment_image( $this->logo, 'thumbnail' ),
@@ -33,6 +33,7 @@ class CWP_Archive_Data extends CWP_Data {
 		$atts[ 'header_bg' ] = $atts[ 'header_bg' ][0];
 
 		return $atts;
+
 	}
 
 }

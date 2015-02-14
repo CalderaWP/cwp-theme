@@ -78,7 +78,7 @@ class CWP_Data {
 		}
 
 		if ( $header_id ) {
-			$this->header = wp_get_attachment_image( $header_id );
+			$this->header = wp_get_attachment_image( $header_id, 'large' );
 		}else{
 			$this->header = $this->get_header_bg();
 		}
