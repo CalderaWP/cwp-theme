@@ -43,8 +43,8 @@ class CWP_Theme_Videos {
 	static public function html5_video( $url = false ) {
 
 		return sprintf( '<script>jQuery(document).ready(function($) {
-    $(".video-player").mediaelementplayer();
-});</script><video width="640" height="360" id="player1" preload="none" id="youtube1">
+    $(".cwp-video-player").mediaelementplayer();
+});</script><video width="640" height="360" class="cwp-video-player" preload="none" id="youtube1">
  			 <source class="video-player" src="%1s" type="video/youtube">
 
 			Your browser does not support the video tag.
