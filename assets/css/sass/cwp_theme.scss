@@ -986,6 +986,34 @@ ul#menu-Footer{
   }
 }
 
+.product-video {
+  h3 {
+    text-align: center;
+    font-size: 3em;
+  }
+  background-color: $dark_green;
+  padding: 24px;
+  p {
+    text-align: center;
+    width: 50%;
+    margin: 0 25%;
+
+  }
+
+  @media (max-width: 600px) {
+    padding: 12px;
+    h3{
+      font-size: 2em;
+    }
+    p {
+      width: 90%;
+      margin: 0 5%;
+    }
+  }
+
+
+}
+
 /**HEADER ADJUSTMENTS**/
 .header-cover {
   background-color: $caldera_grey;
@@ -1008,4 +1036,5 @@ ul#menu-Footer{
 .cwpa-link.button {
   background: none;
 }
+
 

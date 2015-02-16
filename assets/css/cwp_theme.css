@@ -2000,6 +2000,22 @@ ul#menu-Footer {
     color: #0e4c45 !important;
     background: #f6f9f0 !important; }
 
+.product-video {
+  background-color: #7d923b;
+  padding: 24px; }
+  .product-video h3 {
+    text-align: center; }
+  .product-video p {
+    text-align: center;
+    width: 50%;
+    margin: 0 25%; }
+  @media (max-width: 600px) {
+    .product-video {
+      padding: 12px; }
+      .product-video p {
+        width: 90%;
+        margin: 0 5%; } }
+
 /**HEADER ADJUSTMENTS**/
 .header-cover {
   background-color: #e7e8e9;
