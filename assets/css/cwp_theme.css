@@ -2001,17 +2001,22 @@ ul#menu-Footer {
     background: #f6f9f0 !important; }
 
 .product-video {
+  margin-bottom: 24px;
   background-color: #7d923b;
   padding: 24px; }
   .product-video h3 {
-    text-align: center; }
+    text-align: center;
+    font-size: 3em; }
   .product-video p {
     text-align: center;
     width: 50%;
     margin: 0 25%; }
   @media (max-width: 600px) {
     .product-video {
-      padding: 12px; }
+      padding: 12px;
+      margin-bottom: 12px; }
+      .product-video h3 {
+        font-size: 2em; }
       .product-video p {
         width: 90%;
         margin: 0 5%; } }
