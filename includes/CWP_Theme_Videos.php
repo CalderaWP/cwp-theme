@@ -25,6 +25,10 @@ class CWP_Theme_Videos {
 				$width = 3;
 				$video_width = '33%';
 			}
+
+			$out[] = '<script>jQuery(document).ready(function($) {$(".cwp-video-player").mediaelementplayer();
+});</script>';
+
 			foreach( $urls  as $url ) {
 				$out[] = sprintf( '<div class="col-lg-%1s col-md-%2s col-sm-12 col-xs-12 video-gallery-item">', $width, $width );
 				//$out[] = wp_oembed_get( $url );
@@ -45,13 +49,12 @@ class CWP_Theme_Videos {
 
 	static public function html5_video( $url = false, $width ) {
 
-		return sprintf( '<script>jQuery(document).ready(function($) {
-    $(".cwp-video-player").mediaelementplayer();
-});</script><video width="%1s" height="100%" class="cwp-video-player" preload="none" id="youtube1" style="width: %2s;height: 100%;">
+		return sprintf( '
+			<video width="%1s" height="100%" class="cwp-video-player" preload="none"  style="width: %2s;height: 100%;">
  			 <source class="video-player" src="%3s" type="video/youtube">
 
 			Your browser does not support the video tag.
-			</video>' ,$width, $width, esc_url( $url ) );
+			</video>', $width, $width, esc_url( $url ) );
 	}
 
 
