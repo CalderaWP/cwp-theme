@@ -24,7 +24,7 @@
 		<title><?php wp_title('|', true, 'right'); ?></title>
 				
 		<?php if ( is_singular() ) wp_enqueue_script( "comment-reply" ); ?>
-		<link rel="shortcut icon" href="<?php echo esc_url( trailingslashit( get_stylesheet_directory_uri() ) . 'favicon.png' ); ?>/" />
+		<link rel="shortcut icon" href="<?php echo esc_url( trailingslashit( get_stylesheet_directory_uri() ) . 'favicon.ico' ); ?>/" type="image/x-icon" />
 		<?php wp_head(); ?>
 	
 	</head>
