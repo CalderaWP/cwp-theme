@@ -47,7 +47,8 @@ function cwp_theme_scripts_styles() {
    wp_enqueue_script( 'cwp_theme', get_stylesheet_directory_uri() . "/assets/js/cwp_theme{$postfix}.js", array(), CWP_THEME_VERSION, true );
 
    wp_localize_script( 'cwp_theme', 'cwp_theme', array( 'adminajax' => admin_url( 'admin-ajax.php') ) );
-
+   wp_enqueue_script( 'wp-mediaelement' );
+   wp_enqueue_style( 'mediael', '//cdnjs.cloudflare.com/ajax/libs/mediaelement/2.16.3/mediaelementplayer.css' );
 
    wp_enqueue_style( 'bootstrap', '//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css' );
    wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Lato:100,400,900,400italic,700italic,900italic|Merriweather:400,700,300' );
@@ -152,6 +153,7 @@ add_action( 'init', function() {
 
    include( dirname( __FILE__ ) . '/includes/CWP_Social.php' );
 
+   include( dirname( __FILE__ ) . '/includes/CWP_Theme_Videos.php' );
 });
 
 /**
@@ -528,3 +530,4 @@ function cwp_theme_featured_plugins() {
    return $out;
 
 }
+
