@@ -113,8 +113,7 @@ class CWP_Plugin_Page extends CWP_Data {
 			}else{
 				$page[] = $this->feature_section();
 			}
-
-			$page[] = CWP_Theme_Videos::gallery( array( 'http://youtu.be/lxgelwqe8-E', 'http://youtu.be/n9AcG0glVu4' ) );
+			
 			$page[] = $this->testimonials_section();
 			if ( false === $this->free ) {
 				$page[] = $this->price_table();
