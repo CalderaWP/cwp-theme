@@ -17,15 +17,18 @@ class CWP_Theme_Videos {
 			$total = count( $urls );
 			if ( 1 == $total ) {
 				$width = 12;
+				$video_width = '100%';
 			}elseif ( 2 == $total ) {
 				$width = 6;
+				$video_width = '50%';
 			}else{
 				$width = 3;
+				$video_width = '33%';
 			}
 			foreach( $urls  as $url ) {
 				$out[] = sprintf( '<div class="col-lg-%1s col-md-%2s col-sm-12 col-xs-12 video-gallery-item">', $width, $width );
 				//$out[] = wp_oembed_get( $url );
-				$out[] = self::html5_video( $url );
+				$out[] = self::html5_video( $url, $video_width );
 				$out[] = '</div>';
 
 			}
@@ -40,15 +43,15 @@ class CWP_Theme_Videos {
 
 	}
 
-	static public function html5_video( $url = false ) {
+	static public function html5_video( $url = false, $width ) {
 
 		return sprintf( '<script>jQuery(document).ready(function($) {
     $(".cwp-video-player").mediaelementplayer();
-});</script><video width="640" height="360" class="cwp-video-player" preload="none" id="youtube1">
- 			 <source class="video-player" src="%1s" type="video/youtube">
+});</script><video width="%1s" height="100%" class="cwp-video-player" preload="none" id="youtube1" style="width: %2s;height: 100%;">
+ 			 <source class="video-player" src="%3s" type="video/youtube">
 
 			Your browser does not support the video tag.
-			</video>', esc_url( $url ) );
+			</video>' ,$width, $width, esc_url( $url ) );
 	}
 
 
