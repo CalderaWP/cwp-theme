@@ -9,7 +9,9 @@
  ( function( window, undefined ) {
 	'use strict';
     jQuery(document).ready(function($) {
-
+        $( document ).ajaxComplete(function( event, xhr, settings ) {
+           console.log( event );
+        });
     });
 
  } )( this );

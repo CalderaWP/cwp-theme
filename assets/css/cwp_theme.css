@@ -2037,3 +2037,6 @@ ul#menu-Footer {
     background-position: 50% 90% !important; } }
 .cwpa-link.button {
   background: none; }
+
+.affwp-referral-url-submit-wrap input:hover {
+  background-color: #7d923b; }
