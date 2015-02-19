@@ -1,4 +1,4 @@
-/*! CWP Theme - v0.1.0 - 2015-02-18
+/*! CWP Theme - v0.1.0 - 2015-02-19
  * http://CalderaWP.com
  * Copyright (c) 2015; * Licensed GPLv2+ */
 /** globals jQuery, cwp_theme**/
