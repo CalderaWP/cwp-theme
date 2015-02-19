@@ -528,16 +528,5 @@ function cwp_theme_featured_plugins() {
 
 }
 
-/**
- * Remove sharing on checkout page.
- */
-add_action( 'the_excerpt', 'cwp_theme_no_chekcout_share' );
-add_action( 'the_content', 'cwp_theme_no_chekcout_share' );
-function cwp_theme_no_chekcout_share() {
-   if ( CWP_Theme_EDD::is_checkout() ) {
-      remove_filter( 'the_content', 'sharing_display' );
-      remove_filter( 'the_excerpt', 'sharing_display' );
-   }
 
-}
 
