@@ -531,16 +531,12 @@ function cwp_theme_featured_plugins() {
 /**
  * Remove sharing on checkout page.
  */
-add_action( 'loop_start', 'cwp_theme_no_chekcout_share' );
-add_action( 'the_excerpt', 'cwp_theme_no_chekcout_share', 25 );
-add_action( 'the_content', 'cwp_theme_no_chekcout_share',25 );
+add_action( 'the_excerpt', 'cwp_theme_no_chekcout_share' );
+add_action( 'the_content', 'cwp_theme_no_chekcout_share' );
 function cwp_theme_no_chekcout_share() {
    if ( is_page( 'checkout' ) || CWP_Theme_EDD::is_checkout() ) {
-      remove_filter( 'the_content', 'sharing_display',19 );
-      remove_filter( 'the_excerpt', 'sharing_display',19 );
-      if ( class_exists( 'Jetpack_Likes' ) ) {
-         remove_filter( 'the_content', array( Jetpack_Likes::init(), 'post_likes' ), 30, 1 );
-      }
+      remove_filter( 'the_content', 'sharing_display' );
+      remove_filter( 'the_excerpt', 'sharing_display' );
    }
 
 }
