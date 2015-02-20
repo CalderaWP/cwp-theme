@@ -13,7 +13,7 @@ class CWP_Data {
 	/**
 	 * @var object|\Pods
 	 */
-	protected $pod;
+	public $pod;
 
 	/**
 	 * @var object|\WP_Post
@@ -157,7 +157,7 @@ class CWP_Data {
 	 * @return string
 	 */
 	public function testimonials_section() {
-		if ( empty( $this->testimonals_data() ) ) {
+  		if ( empty( $this->testimonals_data() ) ) {
 			return;
 		}
 
@@ -173,13 +173,21 @@ class CWP_Data {
 	/**
 	 * Create HTML Markup for a single testimonial.
 	 *
-	 * @param array $data ?
+	 * @param string $url The tweet URL
 	 *
 	 * @todo finish
 	 *
 	 * @return string
 	 */
-	protected function testimonial( $data ) {
+	protected function testimonial( $url ) {
+
+		$parsed = parse_url( $url );
+		if ( is_ssl() && $parsed[ 'scheme' ] !== 'https' ) {
+			$parsed[ 'scheme' ] = 'https://';
+			$url = implode( $parsed );
+		}
+
+
 		return sprintf(
 			'<li>
 
@@ -190,20 +198,20 @@ class CWP_Data {
 							</p>
 						</div>
 					</div>
-				</li>', wp_oembed_get( esc_url( $data[ 'tweet_url' ] ) )
+				</li>', wp_oembed_get( esc_url( $url ) )
 		);
 
 	}
 
 	/**
-	 * Get a pod object for this post.
+	 * Get a new pod object for this post.
 	 *
 	 * @return object|\Pods
 	 */
 	public function pod( ) {
 
-		$this->pod = pods( $this->post->post_type, $this->post->ID );
 
+		$this->pod = pods( $this->post->post_type, $this->post->ID );
 
 		return $this->pod;
 

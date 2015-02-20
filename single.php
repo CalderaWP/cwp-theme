@@ -10,10 +10,11 @@
  */
 get_header();
 $data = cwp_theme_data();
+
 if ( ! is_front_page() ) {
 	setup_postdata( $data->post );
 	get_template_part( 'content' );
-} else{
+}else{
 	echo CWP_Front_Page::front_page_features();
 }
 

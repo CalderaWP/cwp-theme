@@ -11,6 +11,10 @@
 		$header_style = '';
 	}
 
+	if ( 'course' == get_post_type() ) {
+		//
+	}
+
  ?>
 
 <!DOCTYPE html>
@@ -20,6 +24,7 @@
 	<head>
 		<meta charset="<?php bloginfo( 'charset' ); ?>">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" >
+		<meta name="twitter:widgets:csp" content="on">
 
 		<title><?php wp_title('|', true, 'right'); ?></title>
 				

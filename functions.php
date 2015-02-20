@@ -370,19 +370,30 @@ function cwp_theme_data() {
          global $plugin_data;
 
          if ( ! is_object( $plugin_data ) ) {
-            include( dirname( __FILE__ ) . '/includes/CWP_Plugin_Page.php' );
+            include_once( dirname( __FILE__ ) . '/includes/CWP_Plugin_Page.php' );
             $plugin_data = new CWP_Plugin_Page( $post );
          }
 
          return $plugin_data;
 
-      }else{
+      } elseif( 'course' === get_post_type() ) {
+         global $course_data;
+
+         if ( ! is_object( $course_data ) ) {
+            include_once( dirname( __FILE__ ) . '/includes/CWP_Theme_Course_Data.php' );
+            $course_data = new CWP_Theme_Course_Data( $post, false, true );
+         }
+
+         return $course_data;
+
+      } else {
          global $single_post_data;
          if ( ! is_object( $single_post_data ) ) {
             $single_post_data = new CWP_Data( $post );
          }
 
          return $single_post_data;
+
       }
 
    }else{
@@ -527,6 +538,4 @@ function cwp_theme_featured_plugins() {
    return $out;
 
 }
-
-
 
