@@ -10,6 +10,7 @@
  */
 
 get_header();
+
 $data = cwp_theme_data();
 
 $file = '/includes/metaplates/courses/top.html';
