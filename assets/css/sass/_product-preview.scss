@@ -37,3 +37,18 @@ span#CEP54b718b640d5e838-pagination, span#CEP54d2daa58039b548-pagination {
   font-size: 3em;
   color: $dark_green;
 }
+
+.product-grid-buttons {
+  margin: 0 25%;
+  position: absolute;
+  bottom: 10px;
+
+  .product-grid-learn {
+    float:left;
+  }
+
+  .product-grid-buy {
+    float: right;
+  }
+}
+
