@@ -176,7 +176,7 @@ class CWP_Data {
 		}
 
 		$out[] = '</div></div></section>';
-		$out[] = "<style>jQuery( '#testimonial' ).carousel();</style>";
+		$out[] = "<style>jQuery( '#testimonial' ).carousel({interval: 6000});</style>";
 
 		return implode( '', $out );
 

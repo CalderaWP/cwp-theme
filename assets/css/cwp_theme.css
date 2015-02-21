@@ -377,6 +377,11 @@ input.vex-dialog-button-primary.vex-dialog-button.vex-first.vex-last {
   input.vex-dialog-button-primary.vex-dialog-button.vex-first.vex-last:hover {
     background-color: #a3be60; }
 
+#testimonial {
+  margin: 2.5% 25%; }
+  #testimonial .item {
+    margin: 0 25%; }
+
 .related-products h5 {
   margin-bottom: .7em; }
 .related-products span {
