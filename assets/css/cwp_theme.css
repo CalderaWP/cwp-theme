@@ -377,6 +377,23 @@ input.vex-dialog-button-primary.vex-dialog-button.vex-first.vex-last {
   input.vex-dialog-button-primary.vex-dialog-button.vex-first.vex-last:hover {
     background-color: #a3be60; }
 
+.single-course #course-top, .single-course #course-top {
+  background-color: #e7e8e9; }
+.single-course .course-sign-up {
+  margin-top: 2.5%; }
+.single-course .caldera-grid .btn-default {
+  width: 100%;
+  background-image: none;
+  background-color: #7d923b;
+  color: #f6f9f0;
+  text-shadow: none;
+  border: none;
+  padding: 12px; }
+  .single-course .caldera-grid .btn-default:hover {
+    color: #a3be60;
+    background-color: #0e4c45;
+    text-decoration: none; }
+
 #testimonial {
   margin: 2.5% 25%; }
   #testimonial .item {

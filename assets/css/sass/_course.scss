@@ -1,0 +1,17 @@
+.single-course {
+  #course-top, #course-top {
+    background-color: $caldera_grey;
+  }
+
+  .course-sign-up  {
+    margin-top: 2.5%;
+  }
+
+  .caldera-grid .btn-default {
+    width: 100%;
+    @include cf_submit( $cwp_green, $alt_dark );
+
+  }
+
+}
+

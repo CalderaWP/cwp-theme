@@ -12,7 +12,7 @@
 	}
 
 	if ( 'course' == get_post_type() ) {
-		//
+		$header_style = 'height: 0;';
 	}
 
  ?>

@@ -16,6 +16,7 @@ $data = cwp_theme_data();
 $file = '/includes/metaplates/courses/top.html';
 $template_data = $data->pod->export();
 $template_data[ 'form' ] = $data->sign_up_form();
+$template_data[ 'post_content' ] = wpautop( $data->post->post_content );
 
 echo caldera_metaplate_from_file( $file, $data->post->ID, $template_data );
 echo $data->testimonials_section();
