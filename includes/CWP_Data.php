@@ -152,8 +152,6 @@ class CWP_Data {
 	/**
 	 * Create HTML markup for testimonials section.
 	 *
-	 * @todo finish
-	 *
 	 * @return string
 	 */
 	public function testimonials_section() {
@@ -161,10 +159,24 @@ class CWP_Data {
 			return;
 		}
 
-		$out[] = '<!--Testimonials Section--><section class=" testimonial-bg"><div id="testimonial" class="flexslider "><div class="container"><ul class="slides">';
+		wp_enqueue_script( 'bootstrap' );
+
+		$i = 0;
+		$out[] = '<!--Testimonials Section--><section class="testimonial-bg"><div id="testimonial" class="carousel slide" data-ride="carousel"><div class="carousel-inner" role="listbox">';
+
 		foreach( $this->testimonals_data() as $testimonial ) {
-			$out[] = $this->testimonial( $testimonial );
+			$active = false;
+			if ( $i == 0 ) {
+				$active = true;
+			}
+
+			$out[] = $this->testimonial( $testimonial, $active );
+			$i++;
+
 		}
+
+		$out[] = '</div></div></section>';
+		$out[] = "<style>jQuery( '#testimonial' ).carousel();</style>";
 
 		return implode( '', $out );
 
@@ -175,11 +187,9 @@ class CWP_Data {
 	 *
 	 * @param string $url The tweet URL
 	 *
-	 * @todo finish
-	 *
 	 * @return string
 	 */
-	protected function testimonial( $url ) {
+	protected function testimonial( $url, $active = false ) {
 
 		$parsed = parse_url( $url );
 		if ( is_ssl() && $parsed[ 'scheme' ] !== 'https' ) {
@@ -187,19 +197,19 @@ class CWP_Data {
 			$url = implode( $parsed );
 		}
 
+		$class = '';
+		if ( $active ) {
+			$class = 'active';
+		}
 
 		return sprintf(
-			'<li>
-
-					<div class="testimonial-photo"><img src="images/body/testimonial-img.png" alt=""></div>
-					<div class="container">
-						<div  class="col-lg-12 col-md-12 col-sm-12 col-xs-12 testimonial-content">
-							%1s
-							</p>
-						</div>
-					</div>
-				</li>', wp_oembed_get( esc_url( $url ) )
+			'<div class="item %1s">
+      			%2s
+    		</div>',
+			$class,
+			wp_oembed_get( esc_url( $url ) )
 		);
+
 
 	}
 
