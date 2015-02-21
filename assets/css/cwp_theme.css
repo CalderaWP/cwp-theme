@@ -2026,6 +2026,8 @@ ul#menu-Footer {
   margin-bottom: 24px;
   background-color: #7d923b;
   padding: 24px; }
+  .product-video .fluid-width-video-wrapper {
+    margin-bottom: 24px; }
   .product-video h3 {
     text-align: center;
     font-size: 3em; }
