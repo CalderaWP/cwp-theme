@@ -2120,3 +2120,6 @@ ul#menu-Footer {
   max-width: 900px;
   padding: 24px;
   margin-bottom: 12px; }
+
+video#video {
+  max-width: 700px; }
