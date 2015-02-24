@@ -2,6 +2,7 @@
   padding: 0;
   background-color: $dark_green;
   color: $white;
+  margin: 48px 0;
 
   h3 {
     text-align: center;
@@ -9,6 +10,7 @@
     padding: 8px;
     color: $white;
   }
+
   .button {
     @include cf_submit($alt_dark, $white);
     background-color: $alt_dark;

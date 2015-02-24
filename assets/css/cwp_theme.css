@@ -1268,7 +1268,8 @@ span#CEP54b718b640d5e838-pagination, span#CEP54d2daa58039b548-pagination {
 #featured {
   padding: 0;
   background-color: #7d923b;
-  color: #f6f9f0; }
+  color: #f6f9f0;
+  margin: 48px 0; }
   #featured h3 {
     text-align: center;
     font-size: 2em;
