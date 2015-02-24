@@ -203,6 +203,10 @@ class CWP_Plugin_Page extends CWP_Data {
 	 * @return string
 	 */
 	protected function feature( $data, $left ) {
+		if ( ! $data[ 'text' ] || '' == $data[ 'text' ] ) {
+			return '';
+		}
+		
 		$image = sprintf( '<img class="plugin-features-image" src="%1s" alt="%2s"  />', $data[ 'image' ][0], $data[ 'image' ][1] );
 		$link = sprintf(
 			'<a href="%1s" title="%2s">%3s</a>',
