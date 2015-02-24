@@ -1063,13 +1063,13 @@ ul#menu-Footer{
   background-color:$white;
 }
 
-.blog .post-content .col-lg-9.col-sm-12 {
-  max-width: 900px;
-  background-color: #FFF;
-  padding: 12px;
-  float: none;
-}
+
 
 .single-download .post-content {
   max-width: inherit;
+}
+
+.post-excerpt {
+  background: #FFF;
+  max-width: 900px;
 }

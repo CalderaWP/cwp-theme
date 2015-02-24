@@ -55,20 +55,23 @@
 
 	</div> <!-- /post-header -->
 
-	<div class="post-content col-lg-12 col-sm-12">
+
 		<?php
 			if ( is_single() || is_page() ) {
-				the_content();
-				wp_link_pages();
-				if ( ! is_front_page() || ! is_page( 'about-calderawp' ) ) {
-					if ( 'doc' !== get_post_type() ) {
-						echo cwp_theme_featured_plugins();
-					} else {
-						echo CWP_Docs::link_box( get_the_ID() );
-					}
-				 }
+				echo '<div class="post-content col-lg-12 col-sm-12">';
+					the_content();
+					wp_link_pages();
+					if ( ! is_front_page() || ! is_page( 'about-calderawp' ) ) {
+						if ( 'doc' !== get_post_type() ) {
+							echo cwp_theme_featured_plugins();
+						} else {
+							echo CWP_Docs::link_box( get_the_ID() );
+						}
+					 }
+				echo '</div> <!-- /post-content -->';
 			} else { ?>
-			
+
+		<div class="post-excerpt col-lg-12 col-sm-12">
 			<div class="col-lg-3 col-sm-12">
 				<?php the_post_thumbnail(); ?>
 			</div>
@@ -76,13 +79,14 @@
 				<?php the_excerpt(); ?>
 				<?php printf( '<p class="read-more"><a href="%s" rel="bookmark">Read More</a></p>', esc_url( get_permalink() ) ); ?>
 			</div>
+		</div><!--/post-excerpt-->
 
 			
 		<?php } ?>
 
 
 
-	</div> <!-- /post-content -->
+
 
 </section>
             
