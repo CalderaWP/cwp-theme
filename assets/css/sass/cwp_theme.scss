@@ -969,7 +969,9 @@ ul#menu-Footer{
   padding: 12px;
   color: $white;
   text-align: center;
-  width: 80%;
+  width: 100%;
+  max-width: 900px;
+  margin: 12px 0 -50px;
   h3 {
     font-size: 3em;
   }

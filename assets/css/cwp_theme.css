@@ -2041,7 +2041,9 @@ ul#menu-Footer {
   padding: 12px;
   color: #f6f9f0;
   text-align: center;
-  width: 80%; }
+  width: 100%;
+  max-width: 900px;
+  margin: 12px 0 -50px; }
   .container.docs-plugin-link-box h3 {
     font-size: 3em; }
 
