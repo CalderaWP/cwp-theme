@@ -1260,6 +1260,10 @@ span#CEP54b718b640d5e838-pagination, span#CEP54d2daa58039b548-pagination {
       background-color: #f6f9f0;
       text-decoration: none; }
 
+.feature-container .feature-text {
+  background-color: #fff;
+  padding-bottom: 12px; }
+
 #featured {
   padding: 0;
   background-color: #7d923b;
@@ -2104,4 +2108,8 @@ ul#menu-Footer {
 
 .blog .post-content {
   max-width: inherit;
-  background-color: #fff; }
+  background-color: #fff;
+  float: none; }
+
+.single-download .post-content {
+  max-width: inherit; }

@@ -226,7 +226,7 @@ class CWP_Plugin_Page extends CWP_Data {
 		);
 
 		$text = sprintf(
-			'<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+			'<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 feature-text">
 				<h1>%1s</h1>
 				<div class="txt">%2s</div>
 				<div class="getstarted">%3s</div>
