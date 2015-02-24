@@ -44,12 +44,12 @@ span#CEP54b718b640d5e838-pagination, span#CEP54d2daa58039b548-pagination {
 
   .product-grid-learn {
     float:left;
-    @include button( $cwp_green );
+    @include cf_submit( $cwp_green );
   }
 
   .product-grid-buy {
     float: right;
-    @include button( $cwp_green );
+    @include cf_submit( $cwp_green );
   }
 }
 

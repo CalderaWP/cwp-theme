@@ -1051,3 +1051,19 @@ ul#menu-Footer{
   background-color: $dark_green;
 }
 
+//hacks for post width etc.
+.single-post .post-content {
+  max-width: 900px;
+  background-color: #fff;
+  float:none;
+}
+
+.page-id-377 .single-post .post-content, .page-id-283 .single-post .post-content, .parent-pageid-283 .single-post .post-content, .page-id-671 .single-post .post-content, .page-id-712 .single-post .post-content {
+  max-width: inherit;
+  background-color:$white;
+}
+
+.blog .post-content {
+  max-width: inherit;
+  background-color:#fff;
+}

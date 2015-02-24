@@ -1233,13 +1233,32 @@ span#CEP54b718b640d5e838-pagination, span#CEP54d2daa58039b548-pagination {
   color: #7d923b; }
 
 .product-grid-buttons {
-  margin: 0 25%;
   position: absolute;
   bottom: 10px; }
   .product-grid-buttons .product-grid-learn {
-    float: left; }
+    float: left;
+    background-image: none;
+    background-color: #7d923b;
+    color: #f6f9f0;
+    text-shadow: none;
+    border: none;
+    padding: 12px; }
+    .product-grid-buttons .product-grid-learn:hover {
+      color: #a3be60;
+      background-color: #f6f9f0;
+      text-decoration: none; }
   .product-grid-buttons .product-grid-buy {
-    float: right; }
+    float: right;
+    background-image: none;
+    background-color: #7d923b;
+    color: #f6f9f0;
+    text-shadow: none;
+    border: none;
+    padding: 12px; }
+    .product-grid-buttons .product-grid-buy:hover {
+      color: #a3be60;
+      background-color: #f6f9f0;
+      text-decoration: none; }
 
 #featured {
   padding: 0;
@@ -2073,3 +2092,16 @@ ul#menu-Footer {
 
 .affwp-referral-url-submit-wrap input:hover, .affwp-save-profile-wrap:hover {
   background-color: #7d923b; }
+
+.single-post .post-content {
+  max-width: 900px;
+  background-color: #fff;
+  float: none; }
+
+.page-id-377 .single-post .post-content, .page-id-283 .single-post .post-content, .parent-pageid-283 .single-post .post-content, .page-id-671 .single-post .post-content, .page-id-712 .single-post .post-content {
+  max-width: inherit;
+  background-color: #f6f9f0; }
+
+.blog .post-content {
+  max-width: inherit;
+  background-color: #fff; }
