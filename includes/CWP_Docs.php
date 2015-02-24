@@ -53,14 +53,30 @@ class CWP_Docs {
 		return $content;
 	}
 
-	public static function link_box( $id ) {
-		$related = get_post_meta( $id, 'product' );
+	/**
+	 * Create the "Buy Now Box"
+	 *
+	 * @param int $id Either the post ID of current post, related to what to buy, or if $from_relationship = false, then the download's ID.
+	 * @param bool $from_relationship Optional. If true, the default, then the download ID will be detrmined via the relationship. If false, then download ID is $id.
+	 *
+	 * @return string|void
+	 */
+	public static function link_box( $id, $from_relationship = true ) {
+		if ( $from_relationship ) {
+			$related = get_post_meta( $id, 'product' );
 
-		if ( isset( $related[0] ) && is_array( $related[0] ) ) {
-			$related = $related[0];
-			$id = $related[ 'ID' ];
-		}else{
+			if ( isset( $related[0] ) && is_array( $related[0] ) ) {
+				$related = $related[0];
+				$id      = $related['ID'];
+			} else {
+				return;
+			}
+
+		}
+
+		if ( 'download' != get_post_type( $id ) ) {
 			return;
+
 		}
 
 
