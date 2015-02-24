@@ -61,6 +61,9 @@
 				echo '<div class="post-content col-lg-12 col-sm-12">';
 					the_content();
 					wp_link_pages();
+					if ( 'doc' == get_post_type() ) {
+						echo CWP_Docs::link_box( get_the_ID() );
+					}
 
 				echo '</div> <!-- /post-content -->';
 			} else { ?>
@@ -81,7 +84,7 @@
 			if ( 'doc' !== get_post_type() ) {
 				echo cwp_theme_featured_plugins();
 			} else {
-				echo CWP_Docs::link_box( get_the_ID() );
+				//echo CWP_Docs::link_box( get_the_ID() );
 			}
 		} ?>
 
