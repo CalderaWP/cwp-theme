@@ -2112,4 +2112,6 @@ ul#menu-Footer {
 
 .post-excerpt {
   background: #FFF;
-  max-width: 900px; }
+  max-width: 900px;
+  padding: 24px;
+  margin-bottom: 12px; }
