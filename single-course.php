@@ -20,6 +20,7 @@ $template_data[ 'post_content' ] = wpautop( $data->post->post_content );
 
 echo caldera_metaplate_from_file( $file, $data->post->ID, $template_data );
 echo $data->testimonials_section();
+
 $file = '/includes/metaplates/courses/body.html';
 echo caldera_metaplate_from_file( $file, $data->post->ID );
 
