@@ -1199,7 +1199,8 @@ ul#footer-menu li {
         color: #f6f9f0;
         text-align: center; }
   .home .container.feature-container {
-    padding: 0; }
+    padding: 0;
+    background-color: #f6f9f0; }
   .home .title-wrap h3 a {
     color: #f6f9f0; }
     .home .title-wrap h3 a:hover {
