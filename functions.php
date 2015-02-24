@@ -547,11 +547,8 @@ function cwp_theme_featured_plugins() {
  */
 add_shortcode( 'cwp-product-buy', 'cwp_product_buy_shortcode' );
 function cwp_product_buy_shortcode( $atts ) {
-	$atts = shortcode_atts( array(
-		'ID' => null,
-	), $atts, 'cwp-product-buy' );
 
-	if ( ! is_null( $atts[ 'ID' ] ) ) {
+	if ( isset(  $atts[ 'ID' ] ) ) {
 		return CWP_Docs::link_box( $atts[ 'ID' ] );
 	}
 
