@@ -203,7 +203,7 @@ class CWP_Plugin_Page extends CWP_Data {
 	 * @return string
 	 */
 	protected function feature( $data, $left ) {
-		if ( ! $data[ 'text' ] || '' == $data[ 'text' ] ) {
+		if ( ! $data[ 'text' ] || '' == $data[ 'text' ] || ! $data[ 'title' ] || '' == $data[ 'title' ]) {
 			return '';
 		}
 		
