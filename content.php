@@ -61,9 +61,7 @@
 				echo '<div class="post-content col-lg-12 col-sm-12">';
 					the_content();
 					wp_link_pages();
-					if ( 'doc' == get_post_type() ) {
-						echo CWP_Docs::link_box( get_the_ID() );
-					}
+
 
 				echo '</div> <!-- /post-content -->';
 			} else { ?>
@@ -90,11 +88,9 @@
 </section>
 <div class="clear"></div>
 <?php
-if ( ! is_front_page() || ! is_page( 'about-calderawp' ) ) {
-	if ( 'doc' !== get_post_type() ) {
-		echo cwp_theme_featured_plugins();
+	if ( 'doc' == get_post_type() ) {
+		echo CWP_Docs::link_box( get_the_ID() );
 	}
-}
 ?>
             
 <div class="clear"></div>
