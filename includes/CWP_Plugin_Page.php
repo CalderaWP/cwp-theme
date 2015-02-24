@@ -65,6 +65,10 @@ class CWP_Plugin_Page extends CWP_Data {
 			$this->coming_soon = true;
 		}
 
+		if ( isset( $_GET[ 'preview' ] ) && $_GET[ 'preview' ] ) {
+			$this->coming_soon = false;
+		}
+
 	}
 
 	/**
