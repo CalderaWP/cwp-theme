@@ -1056,17 +1056,20 @@ ul#menu-Footer{
   max-width: 900px;
   background-color: #fff;
   float:none;
+  margin: 0 12.5%;
 }
 
 .page-id-377 .single-post .post-content, .page-id-283 .single-post .post-content, .parent-pageid-283 .single-post .post-content, .page-id-671 .single-post .post-content, .page-id-712 .single-post .post-content {
   max-width: inherit;
   background-color:$white;
+  margin: inherit;
 }
 
 
 
 .single-download .post-content {
   max-width: inherit;
+  margin: inherit;
 }
 
 .post-excerpt {

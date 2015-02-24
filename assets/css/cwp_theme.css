@@ -2102,14 +2102,17 @@ ul#menu-Footer {
 .single-post .post-content {
   max-width: 900px;
   background-color: #fff;
-  float: none; }
+  float: none;
+  margin: 0 12.5%; }
 
 .page-id-377 .single-post .post-content, .page-id-283 .single-post .post-content, .parent-pageid-283 .single-post .post-content, .page-id-671 .single-post .post-content, .page-id-712 .single-post .post-content {
   max-width: inherit;
-  background-color: #f6f9f0; }
+  background-color: #f6f9f0;
+  margin: inherit; }
 
 .single-download .post-content {
-  max-width: inherit; }
+  max-width: inherit;
+  margin: inherit; }
 
 .post-excerpt {
   background: #FFF;
