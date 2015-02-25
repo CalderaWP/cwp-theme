@@ -81,7 +81,7 @@
 			
 		<?php }
 		if ( ! is_front_page() || ! is_page( 'about-calderawp' ) ) {
-			if ( 'doc' !== get_post_type() ) {
+			if ( 'doc' !== get_post_type() && ! is_home() ) {
 				echo cwp_theme_featured_plugins();
 			}
 		} ?>

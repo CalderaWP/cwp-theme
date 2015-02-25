@@ -528,6 +528,10 @@ add_action( 'wp_head', function(){
  * @return string
  */
 function cwp_theme_featured_plugins() {
+	/**
+	 * Runs before featured plugin thing. Useful for preventing multiple outputs of the thing.
+	 */
+	do_action( 'cwp_theme_featured_plugins' );
    $out = '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="featured">
 				<h3>Featured Plugins</h3>
 				<div class="block-grid-3">
@@ -539,6 +543,19 @@ function cwp_theme_featured_plugins() {
 
             </div>';
    return $out;
+
+}
+
+/**
+ * Show the featured plugins grid--only if it hasn't been shown already.
+ *
+ * @return string
+ */
+function cwp_theme_featuted_plugins_once() {
+	if ( ! did_action( 'cwp_theme_featured_plugins' ) ) {
+		return cwp_theme_featured_plugins();
+
+	}
 
 }
 
