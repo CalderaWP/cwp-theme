@@ -44,7 +44,7 @@ function cwp_theme_load_single_caldera_answer_cb() {
 function cwp_theme_get_single_answer_view( $id, $template = 'single answer' ) {
 	if ( function_exists( 'pods' ) ) {
 		$key = __FUNCTION__.'_'.$id;
-		if ( false == ( $out = pods_transient_get( $id ) ) ) {
+		if ( false == ( $out = pods_transient_get( $key ) ) {
 			$pods = pods( 'caldera_answers', $id, true );
 			if ( is_object( $pods ) && $pods->id() == $id ) {
 				$out = $pods->template( $template );
