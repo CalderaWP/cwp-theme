@@ -570,3 +570,11 @@ function cwp_product_buy_shortcode( $atts ) {
 	}
 
 }
+
+/**
+ * Set Paypal EDD no shipping.
+ */
+add_filter( 'edd_paypal_redirect_args', function( $paypal_args ) {
+	$paypal_args[ 'no_shipping' ] = '2';
+	return $paypal_args;
+});
