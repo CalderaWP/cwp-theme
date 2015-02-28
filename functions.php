@@ -578,3 +578,15 @@ add_filter( 'edd_paypal_redirect_args', function( $paypal_args ) {
 	$paypal_args[ 'no_shipping' ] = '2';
 	return $paypal_args;
 });
+
+/**
+ * Allow "download" and "free_plugin" to be publically queryable via the PODS JSON API
+ */
+add_filter( 'pods_json_api_access_pods_get_items', function( $access, $method, $pod ) {
+	if ( in_array(  $pod, array( 'free_plugin', 'download' ) ) ) {
+		$access = true;
+	}
+
+	return $access;
+
+}, 50, 3 );
