@@ -10,9 +10,9 @@
  */
 
 /**
- * Class CWP_Docs
+ * Class CWP_Theme_Docs
  */
-class CWP_Docs {
+class CWP_Theme_Docs {
 
 	/**
 	 * The ID for the Docs page

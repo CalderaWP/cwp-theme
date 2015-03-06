@@ -9,7 +9,7 @@
  * @copyright 2015 Josh Pollock
  */
 
-class CWP_Front_Page extends CWP_Front_Page_Data {
+class CWP_Theme_Front_Page extends CWP_Theme_Front_Page_Data {
 
 	/**
 	 * Output the front page features markup

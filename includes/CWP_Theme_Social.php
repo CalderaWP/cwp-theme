@@ -9,7 +9,7 @@
  * @copyright 2015 Josh Pollock
  */
 
-class CWP_Social {
+class CWP_Theme_Social {
 
 	/**
 	 * Data for social links

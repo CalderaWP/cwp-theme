@@ -143,16 +143,16 @@ add_action( 'init', function() {
  */
 add_action( 'init', function() {
    include( dirname( __FILE__ ) . '/includes/CWP_Theme_Caldera_Answers.php' );
-   include( dirname( __FILE__ ) . '/includes/CWP_Data.php' );
+   include( dirname( __FILE__ ) . '/includes/CWP_Theme_Data.php' );
 
    include( dirname( __FILE__ ) . '/includes/baldrick.php' );
 
-   include( dirname( __FILE__ ) . '/includes/CWP_Front_Page_Data.php' );
-   include( dirname( __FILE__ ) . '/includes/CWP_Front_Page.php' );
+   include( dirname( __FILE__ ) . '/includes/CWP_Theme_Front_Page_Data.php' );
+   include( dirname( __FILE__ ) . '/includes/CWP_Theme_Front_Page.php' );
 
-   include( dirname( __FILE__ ) . '/includes/CWP_Docs.php' );
+   include( dirname( __FILE__ ) . '/includes/CWP_Theme_Docs.php' );
 
-   include( dirname( __FILE__ ) . '/includes/CWP_Social.php' );
+   include( dirname( __FILE__ ) . '/includes/CWP_Theme_Social.php' );
 
 });
 
@@ -232,8 +232,8 @@ add_action( 'init',
     function() {
        add_filter( 'the_content',
            function( $content ) {
-              if ( is_page( CWP_Docs::$docs_page_id ) ) {
-                 $content = CWP_Docs::content_filter( $content );
+              if ( is_page( CWP_Theme_Docs::$docs_page_id ) ) {
+                 $content = CWP_Theme_Docs::content_filter( $content );
               }
 
               return $content;
@@ -307,13 +307,13 @@ function cwp_bio_shortcode( $atts, $content = '' ) {
  * @return string|void
  */
 function cwp_bio_box( $who, $bio ) {
-   $data = CWP_Social::our_data( $who );
+   $data = CWP_Theme_Social::our_data( $who );
 
    if ( is_array( $data ) ) {
       $name = $data['name'];
 
 
-      $social_html = CWP_Social::social_html( $data[ 'social' ], $name );
+      $social_html = CWP_Theme_Social::social_html( $data[ 'social' ], $name );
 
       $out[] = '<div class="about-box">';
       $out[] = sprintf( '<div class="about-left">%1s %2s</div>',
@@ -364,7 +364,7 @@ add_filter( 'template_include', function ( $template ) {
 /**
  * Gets current instance of the Theme Data class
  *
- * @return \CWP_Data|\CWP_Plugin_Page
+ * @return \CWP_Theme_Data|\CWP_Theme_Plugin_Page
  */
 function cwp_theme_data() {
    if ( is_single() || is_page() ) {
@@ -373,8 +373,8 @@ function cwp_theme_data() {
          global $plugin_data;
 
          if ( ! is_object( $plugin_data ) ) {
-            include_once( dirname( __FILE__ ) . '/includes/CWP_Plugin_Page.php' );
-            $plugin_data = new CWP_Plugin_Page( $post );
+            include_once( dirname( __FILE__ ) . '/includes/CWP_Theme_Plugin_Page.php' );
+            $plugin_data = new CWP_Theme_Plugin_Page( $post );
          }
 
          return $plugin_data;
@@ -384,7 +384,7 @@ function cwp_theme_data() {
 
          if ( ! is_object( $course_data ) ) {
             include_once( dirname( __FILE__ ) . '/includes/CWP_Theme_Course_Data.php' );
-            $course_data = new CWP_Theme_Course_Data( $post, false, true );
+            $course_data = new CWP_Theme_Course_Theme_Data( $post, false, true );
          }
 
          return $course_data;
@@ -392,7 +392,7 @@ function cwp_theme_data() {
       } else {
          global $single_post_data;
          if ( ! is_object( $single_post_data ) ) {
-            $single_post_data = new CWP_Data( $post );
+            $single_post_data = new CWP_Theme_Data( $post );
          }
 
          return $single_post_data;
@@ -402,8 +402,8 @@ function cwp_theme_data() {
    }else{
       global $archive_data;
       if ( ! is_object( $archive_data ) ) {
-         include( dirname( __FILE__ ) . '/includes/CWP_Archive_Data.php' );
-         $archive_data = new CWP_Archive_Data();
+         include( dirname( __FILE__ ) . '/includes/CWP_Theme_Archive_Data.php' );
+         $archive_data = new CWP_Theme_Archive_Data();
       }
 
       return $archive_data;
@@ -566,7 +566,7 @@ add_shortcode( 'cwp-product-buy', 'cwp_product_buy_shortcode' );
 function cwp_product_buy_shortcode( $atts ) {
 
 	if ( isset(  $atts[ 'ID' ] ) ) {
-		return CWP_Docs::link_box( $atts[ 'ID' ] );
+		return CWP_Theme_Docs::link_box( $atts[ 'ID' ] );
 	}
 
 }

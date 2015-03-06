@@ -15,7 +15,7 @@ if ( ! is_front_page() ) {
 	setup_postdata( $data->post );
 	get_template_part( 'content' );
 }else{
-	echo CWP_Front_Page::front_page_features();
+	echo CWP_Theme_Front_Page::front_page_features();
 }
 
 if ( is_front_page() || is_page( 'about-calderawp' ) ) {

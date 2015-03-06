@@ -9,7 +9,7 @@
  * @copyright 2015 Josh Pollock
  */
 
-class CWP_Theme_Course_Data extends CWP_Data {
+class CWP_Theme_Course_Theme_Data extends CWP_Theme_Data {
 
 	/**
 	 * Get testimonials data from field

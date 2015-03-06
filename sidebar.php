@@ -4,7 +4,7 @@
 	
 		<?php
 
-			echo CWP_Social::cwp_social_pseudo_widget();
+			echo CWP_Theme_Social::cwp_social_pseudo_widget();
 			global $post;
 
 			if ( CWP_Theme_EDD::is_edd_related( $post) ) {

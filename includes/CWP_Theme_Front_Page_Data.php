@@ -9,7 +9,7 @@
  * @copyright 2015 Josh Pollock
  */
 
-class CWP_Front_Page_Data {
+class CWP_Theme_Front_Page_Data {
 
 	/**
 	 * Return an array of data for front page feature elements

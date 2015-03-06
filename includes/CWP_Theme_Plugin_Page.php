@@ -1,7 +1,7 @@
 <?php
 
 
-class CWP_Plugin_Page extends CWP_Data {
+class CWP_Theme_Plugin_Page extends CWP_Theme_Data {
 
 
 	/**

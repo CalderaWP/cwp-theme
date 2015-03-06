@@ -9,7 +9,7 @@
  * @copyright 2015 Josh Pollock
  */
 
-class CWP_Data {
+class CWP_Theme_Data {
 	/**
 	 * @var object|\Pods
 	 */
@@ -278,7 +278,7 @@ class CWP_Data {
 					%2s
 				</div>
 			</section>',
-			CWP_Social::cwp_social_links(),
+			CWP_Theme_Social::cwp_social_links(),
 			Caldera_Forms::render_form( 'CF54d702af07cef' )
 		);
 

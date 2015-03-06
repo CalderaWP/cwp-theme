@@ -9,7 +9,7 @@
  * @copyright 2015 Josh Pollock
  */
 
-class CWP_Archive_Data extends CWP_Data {
+class CWP_Theme_Archive_Data extends CWP_Theme_Data {
 
 	public $header_atts;
 
